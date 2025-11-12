@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-slate-100 mb-2">Let's Talk</h2>
                     <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
-                    <p className="text-lg text-slate-300 mt-4 max-w-2xl mx-auto">Ready to bring your brand to life? We'd love to hear about your project.</p>
+                    <p className="text-lg text-slate-300 mt-4 max-w-2xl mx-auto">Ready to launch an ad campaign that gets results? We'd love to hear about your goals.</p>
                 </div>
                 <div className="max-w-2xl mx-auto">
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -93,8 +93,8 @@ const Contact: React.FC = () => {
                         <a href="#" className="hover:text-blue-400 transition-colors duration-300"><InstagramIcon /></a>
                         <a href="#" className="hover:text-blue-400 transition-colors duration-300"><TiktokIcon /></a>
                     </div>
-                    <a href="mailto:motionmadebne@gmail.com" className="hover:text-slate-100 transition-colors duration-300">
-                        motionmadebne@gmail.com
+                    <a href="mailto:abbed@motionmadebne.com.au" className="hover:text-slate-100 transition-colors duration-300">
+                        abbed@motionmadebne.com.au
                     </a>
                     <p className="mt-4 text-sm">&copy; {new Date().getFullYear()} MotionMade. All Rights Reserved.</p>
                 </div>

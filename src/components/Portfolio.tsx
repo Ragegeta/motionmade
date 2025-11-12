@@ -1,12 +1,10 @@
 import React from 'react';
 
 const portfolioItems = [
-    { title: 'Gym Reel', imageUrl: 'https://picsum.photos/seed/gym/500/400' },
-    { title: 'Cafe Feature', imageUrl: 'https://picsum.photos/seed/cafe/500/400' },
-    { title: 'Recovery Studio Promo', imageUrl: 'https://picsum.photos/seed/studio/500/400' },
-    { title: 'Product Showcase', imageUrl: 'https://picsum.photos/seed/product/500/400' },
-    { title: 'Local Event Highlight', imageUrl: 'https://picsum.photos/seed/event/500/400' },
-    { title: 'Brand Intro', imageUrl: 'https://picsum.photos/seed/brand/500/400' },
+    { title: 'Restaurant TikTok Ad', imageUrl: 'https://picsum.photos/seed/cafe/500/400' },
+    { title: 'Fitness Ad', imageUrl: 'https://picsum.photos/seed/gym/500/400' },
+    { title: 'Real Estate Ad', imageUrl: 'https://picsum.photos/seed/realestate/500/400' },
+    { title: 'Local Service Ad', imageUrl: 'https://picsum.photos/seed/service/500/400' },
 ];
 
 const Portfolio: React.FC = () => {
@@ -17,7 +15,7 @@ const Portfolio: React.FC = () => {
                     <h2 className="text-4xl font-bold text-slate-100 mb-2">Our Work</h2>
                     <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {portfolioItems.map((item, index) => (
                         <div key={index} className="group relative overflow-hidden rounded-lg shadow-xl shadow-black/40">
                             <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
