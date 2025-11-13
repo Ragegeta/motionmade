@@ -2,23 +2,66 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MotionMade | Authentic stories for brands</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- ✅ SEO Meta Tags -->
+    <title>MotionMade — Digital Ads That Convert</title>
+    <meta
+      name="description"
+      content="MotionMade helps Brisbane businesses run Facebook, Instagram, and Google ad campaigns that deliver real results — traffic, leads, and sales."
+    />
+    <meta
+      name="keywords"
+      content="Brisbane ads agency, digital marketing, Facebook ads, social media advertising, Google Ads"
+    />
+    <meta name="author" content="MotionMade" />
+
+    <!-- ✅ Open Graph / Social -->
+    <meta property="og:title" content="MotionMade — Digital Ads That Convert" />
+    <meta property="og:description" content="Brisbane’s creative ad agency focused on real ROI." />
+    <meta property="og:image" content="https://motionmadebne.com.au/images/social-preview.png" />
+    <meta property="og:url" content="https://motionmadebne.com.au" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- ✅ Tailwind and React Imports -->
     <script src="https://cdn.tailwindcss.com"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "vite": "https://aistudiocdn.com/vite@^7.1.12",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://aistudiocdn.com/react@^19.2.0",
+          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+          "react/": "https://aistudiocdn.com/react@^19.2.0/",
+          "vite": "https://aistudiocdn.com/vite@^7.1.12",
+          "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
+        }
+      }
+    </script>
+  </head>
+
   <body class="bg-gradient-to-br from-black via-slate-900 to-blue-900/50 text-slate-200 font-sans">
+    <!-- 🔥 Hidden static form JUST for Netlify detection -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p>
+        <label>
+          Don’t fill this out if you're human: <input name="bot-field" />
+        </label>
+      </p>
+      <p><input type="text" name="name" /></p>
+      <p><input type="email" name="email" /></p>
+      <p><textarea name="message"></textarea></p>
+    </form>
+    <!-- end hidden form -->
+
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>
