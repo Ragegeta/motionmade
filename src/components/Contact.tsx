@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "YOUR_SERVICE_ID";
+const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const InstagramIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -23,22 +28,21 @@ const TiktokIcon = () => (
 );
 
 const Contact: React.FC = () => {
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
+    setStatus("sending");
 
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.currentTarget, PUBLIC_KEY)
       .then(() => {
         setStatus("success");
-        form.reset();
+        e.currentTarget.reset();
       })
-      .catch(() => setStatus("error"));
+      .catch(() => {
+        setStatus("error");
+      });
   };
 
   return (
@@ -56,21 +60,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className="space-y-6"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p className="hidden">
-              <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
-              </label>
-            </p>
-
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-slate-300">
                 Name
@@ -132,9 +122,10 @@ const Contact: React.FC = () => {
             <div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold py-3 px-6 rounded-md hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-400"
+                disabled={status === "sending"}
+                className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold py-3 px-6 rounded-md hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-400 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
             </div>
 
@@ -178,3 +169,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
