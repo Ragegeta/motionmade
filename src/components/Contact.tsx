@@ -1,48 +1,53 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const SERVICE_ID = "YOUR_SERVICE_ID";
-const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+// ✅ Initialise EmailJS once with your PUBLIC KEY
+emailjs.init({
+  publicKey: "AcSa1aFlL36Sxc6ge",
+});
 
 const InstagramIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
     <path
       fillRule="evenodd"
-      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 14.784 2 14.43 2 12s.013-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.48 3.614c.636-.247 1.363-.416 2.427-.465C8.93 2.013 9.284 2 11.685 2h.63m-.001-2C9.25 0 8.884.01 7.828.056c-1.17.055-2.094.22-2.958.516a6.88 6.88 0 00-2.333 1.62A6.88 6.88 0 00.92 6.556c-.297.864-.46 1.788-.516 2.958C.01 10.516 0 10.884 0 12c0 1.116.01 1.484.056 2.542.055 1.17.22 2.094.516 2.958a6.88 6.88 0 001.62 2.333 6.88 6.88 0 002.333 1.62c.864.297 1.788.46 2.958.516.956.045 1.32.056 2.376.056s1.42-.01 2.476-.056c1.17-.055 2.094-.22 2.958-.516a6.88 6.88 0 002.333-1.62 6.88 6.88 0 001.62-2.333c.297-.864.46-1.788.516-2.958.045-1.058.056-1.426.056-2.476s-.01-1.42-.056-2.476c-.055-1.17-.22-2.094-.516-2.958a6.88 6.88 0 00-1.62-2.333A6.88 6.88 0 0017.444.92c-.864-.297-1.788-.46-2.958-.516C13.484.01 13.116 0 12 0h.315z"
+      d="M12.315 2c2.43 0 2.784.013 3.808.06..."
       clipRule="evenodd"
     />
-    <path
-      fillRule="evenodd"
-      d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z"
-      clipRule="evenodd"
-    />
-    <path d="M16.95 6.05a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" />
   </svg>
 );
 
 const TiktokIcon = () => (
-  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.85-.38-6.75-1.77-1.06-.78-1.86-1.8-2.4-2.99-.4-1.04-.6-2.13-.6-3.23s.01-2.12.02-3.18c.02-1.64.44-3.26 1.25-4.73 1.06-1.95 2.9-3.32 5.09-3.87 1.04-.26 2.1-.4 3.16-.46.24 1.41.66 2.8 1.25 4.12-1.03.26-2.1.33-3.13.33-1.04 0-2.09-.15-3.09-.54-.5-.19-.94-.48-1.32-.82Z" />
+  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12.525.02c1.31-.02..." />
   </svg>
 );
 
 const Contact: React.FC = () => {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"" | "sending" | "success" | "error">(
+    ""
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
 
+    const form = e.currentTarget;
+
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.currentTarget, PUBLIC_KEY)
-      .then(() => {
-        setStatus("success");
-        e.currentTarget.reset();
-      })
-      .catch(() => {
-        setStatus("error");
-      });
+      .sendForm(
+        "service_jrasc2b",   // ✅ your service ID
+        "template_qupacf8",  // ✅ your template ID
+        form                 // ✅ the <form> element
+      )
+      .then(
+        () => {
+          setStatus("success");
+          form.reset();
+        },
+        () => {
+          setStatus("error");
+        }
+      );
   };
 
   return (
@@ -69,7 +74,8 @@ const Contact: React.FC = () => {
                 type="text"
                 name="name"
                 required
-                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 
+                rounded-md py-3 px-4 text-slate-100 placeholder-slate-500"
               />
             </div>
 
@@ -81,29 +87,32 @@ const Contact: React.FC = () => {
                 type="email"
                 name="email"
                 required
-                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 
+                rounded-md py-3 px-4 text-slate-100 placeholder-slate-500"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-slate-300">
-                Company Name <span className="text-slate-500">(Optional)</span>
+                Company Name (Optional)
               </label>
               <input
                 type="text"
                 name="company"
-                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 
+                rounded-md py-3 px-4 text-slate-100 placeholder-slate-500"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-slate-300">
-                Phone Number <span className="text-slate-500">(Optional)</span>
+                Phone Number (Optional)
               </label>
               <input
                 type="tel"
                 name="phone"
-                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 
+                rounded-md py-3 px-4 text-slate-100 placeholder-slate-500"
               />
             </div>
 
@@ -113,27 +122,29 @@ const Contact: React.FC = () => {
               </label>
               <textarea
                 name="message"
-                rows={4}
                 required
-                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                rows={4}
+                className="mt-1 block w-full bg-slate-800/50 border border-slate-700 
+                rounded-md py-3 px-4 text-slate-100 placeholder-slate-500"
               ></textarea>
             </div>
 
-            <div>
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold py-3 px-6 rounded-md hover:shadow-lg hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-400 disabled:opacity-60 disabled:cursor-not-allowed"
-              >
-                {status === "sending" ? "Sending..." : "Send Message"}
-              </button>
-            </div>
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 
+              text-white font-bold py-3 px-6 rounded-md hover:scale-105 
+              transition-transform duration-300 disabled:opacity-60 disabled:hover:scale-100"
+            >
+              {status === "sending" ? "Sending..." : "Send Message"}
+            </button>
 
             {status === "success" && (
               <p className="text-green-400 text-center mt-4">
                 Message sent successfully!
               </p>
             )}
+
             {status === "error" && (
               <p className="text-red-400 text-center mt-4">
                 Something went wrong. Please try again.
@@ -146,21 +157,23 @@ const Contact: React.FC = () => {
       <footer className="mt-20 border-t border-slate-800 pt-8">
         <div className="container mx-auto px-6 text-center text-slate-400">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="#" className="hover:text-blue-400 transition-colors duration-300">
+            <a className="hover:text-blue-400">
               <InstagramIcon />
             </a>
-            <a href="#" className="hover:text-blue-400 transition-colors duration-300">
+            <a className="hover:text-blue-400">
               <TiktokIcon />
             </a>
           </div>
+
           <a
             href="mailto:abbed@motionmadebne.com.au"
-            className="hover:text-slate-100 transition-colors duration-300"
+            className="hover:text-slate-100"
           >
             abbed@motionmadebne.com.au
           </a>
+
           <p className="mt-4 text-sm">
-            &copy; {new Date().getFullYear()} MotionMade. All Rights Reserved.
+            © {new Date().getFullYear()} MotionMade. All Rights Reserved.
           </p>
         </div>
       </footer>
@@ -169,4 +182,5 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+
 
