@@ -1,46 +1,60 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const InstagramIcon = () => (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path
-            fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 14.784 2 14.43 2 12s.013-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.48 3.614c.636-.247 1.363-.416 2.427-.465C8.93 3.013 9.284 3 11.685 3h.63m-.001-3C9.25 0 8.884.01 7.828.056c-1.17.055-2.094.22-2.958.516a6.88 6.88 0 00-2.333 1.62A6.88 6.88 0 00.92 6.556c-.297.864-.46 1.788-.516 2.958C.01 10.516 0 10.884 0 12c0 1.116.01 1.484.056 2.542.055 1.17.22 2.094.516 2.958a6.88 6.88 0 001.62 2.333 6.88 6.88 0 002.333 1.62c.864.297 1.788.46 2.958.516.956.045 1.32.056 2.376.056s1.42-.01 2.476-.056c1.17-.055 2.094-.22 2.958-.516a6.88 6.88 0 002.333-1.62 6.88 6.88 0 001.62-2.333c.297-.864.46-1.788.516-2.958.045-1.058.056-1.426.056-2.476s-.01-1.42-.056-2.476c-.055-1.17-.22-2.094-.516-2.958a6.88 6.88 0 00-1.62-2.333A6.88 6.88 0 0017.444.92c-.864-.297-1.788-.46-2.958-.516C13.484.01 13.116 0 12 0h.315z"
-            clipRule="evenodd"
-        />
-        <path
-            fillRule="evenodd"
-            d="M12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zM12 15a3 3 0 110-6 3 3 0 010 6z"
-            clipRule="evenodd"
-        />
-        <path d="M16.95 6.05a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" />
+        {/* … keep your existing SVG PATHS HERE … */}
     </svg>
 );
 
 const TiktokIcon = () => (
     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.85-.38-6.75-1.77-1.06-.78-1.86-1.8-2.4-2.99-.4-1.04-.6-2.13-.6-3.23s.01-2.12.02-3.18c.02-1.64.44-3.26 1.25-4.73 1.06-1.95 2.9-3.32 5.09-3.87 1.04-.26 2.1-.4 3.16-.46.24 1.41.66 2.8 1.25 4.12-1.03.26-2.1.33-3.13.33-1.04 0-2.09-.15-3.09-.54-.5-.19-.94-.48-1.32-.82-.04-.04-.08-.08-.12-.13-.05-.05-.09-.09-.13-.14-.03-.04-.05-.07-.08-.11-.02-.03-.04-.06-.06-.09-.01-.02-.03-.05-.04-.07a.46.46 0 01-.03-.06v-.01c-.02-.05-.03-.1-.03-.15v-.03c-.01-.08-.02-.16-.02-.24V6.1c.01-.18.03-.35.07-.52.39.45.86.82 1.39 1.09.94.48 2.03.68 3.09.68 1.08 0 2.18-.12 3.22-.42a15 15 0 01-1.22-4.07z" />
+        {/* … keep your existing SVG PATHS HERE … */}
     </svg>
 );
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
+        from_name: '',
+        reply_to: '',
         company: '',
-        phone: '',
+        tiktok_handle: '',
         message: '',
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({ ...prevState, [name]: value }));
+        setFormData(prev => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thanks! We will be in touch to discuss your strategy.');
-        setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+
+        const form = e.currentTarget; // THIS is your <form id="contact-form">
+
+        console.log('Form submitted:', Object.fromEntries(new FormData(form)));
+
+        emailjs
+            .sendForm(
+                'YOUR_SERVICE_ID',   // e.g. "service_xxxxxx"
+                'YOUR_TEMPLATE_ID',  // e.g. "template_xxxxxx"
+                form,
+                'YOUR_PUBLIC_KEY'    // e.g. "public_xxxxxx"
+            )
+            .then(() => {
+                alert('Message sent! We’ll be in touch.');
+                setFormData({
+                    from_name: '',
+                    reply_to: '',
+                    company: '',
+                    tiktok_handle: '',
+                    message: '',
+                });
+            })
+            .catch(err => {
+                console.error('EmailJS Error:', err);
+                alert('Failed to send message. Email us directly at abbed@motionmadebne.com.au');
+            });
     };
 
     return (
@@ -58,16 +72,17 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="max-w-2xl mx-auto">
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* THIS IS YOUR OLD HTML FORM, JUST IN JSX */}
+                    <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-slate-300">
+                            <label htmlFor="from_name" className="block text-sm font-medium text-slate-300">
                                 Name
                             </label>
                             <input
                                 type="text"
-                                name="name"
-                                id="name"
-                                value={formData.name}
+                                id="from_name"
+                                name="from_name"
+                                value={formData.from_name}
                                 onChange={handleChange}
                                 required
                                 className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
@@ -75,14 +90,14 @@ const Contact: React.FC = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-slate-300">
+                            <label htmlFor="reply_to" className="block text-sm font-medium text-slate-300">
                                 Email
                             </label>
                             <input
                                 type="email"
-                                name="email"
-                                id="email"
-                                value={formData.email}
+                                id="reply_to"
+                                name="reply_to"
+                                value={formData.reply_to}
                                 onChange={handleChange}
                                 required
                                 className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
@@ -96,8 +111,8 @@ const Contact: React.FC = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    name="company"
                                     id="company"
+                                    name="company"
                                     value={formData.company}
                                     onChange={handleChange}
                                     className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
@@ -105,15 +120,15 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-slate-300">
+                                <label htmlFor="tiktok_handle" className="block text-sm font-medium text-slate-300">
                                     TikTok Handle <span className="text-slate-500">(Optional)</span>
                                 </label>
                                 <input
                                     type="text"
-                                    name="phone"
-                                    id="phone"
+                                    id="tiktok_handle"
+                                    name="tiktok_handle"
                                     placeholder="@brandname"
-                                    value={formData.phone}
+                                    value={formData.tiktok_handle}
                                     onChange={handleChange}
                                     className="mt-1 block w-full bg-slate-800/50 border border-slate-700 rounded-md py-3 px-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                                 />
@@ -125,8 +140,8 @@ const Contact: React.FC = () => {
                                 Tell us about your business goals
                             </label>
                             <textarea
-                                name="message"
                                 id="message"
+                                name="message"
                                 rows={4}
                                 value={formData.message}
                                 onChange={handleChange}
@@ -151,13 +166,13 @@ const Contact: React.FC = () => {
                 <div className="container mx-auto px-6 text-center text-slate-400">
                     <div className="flex justify-center space-x-6 mb-4">
                         <a
-                            href="#"
+                            href="https://www.tiktok.com/@YOUR_HANDLE"
                             className="text-white hover:text-pink-400 transition-colors duration-300 transform hover:scale-110"
                         >
                             <TiktokIcon />
                         </a>
                         <a
-                            href="#"
+                            href="https://www.instagram.com/YOUR_HANDLE"
                             className="hover:text-pink-400 transition-colors duration-300 transform hover:scale-110"
                         >
                             <InstagramIcon />
