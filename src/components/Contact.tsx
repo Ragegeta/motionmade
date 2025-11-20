@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-// Initialise EmailJS with YOUR key (this is your user ID style key)
+// Initialise EmailJS with your user/public key
 emailjs.init('AcSa1aFlL36Sxc6ge');
 
 const InstagramIcon = () => (
@@ -48,9 +48,9 @@ const Contact: React.FC = () => {
 
         emailjs
             .sendForm(
-                'service_5b7yd6j',   // your service ID
-                'template_7q439sl', // your template ID
-                form                // NO 4th arg – auth is via init() above
+                'service_jrasc2b',   // your real service ID
+                'template_qupacf8', // your real template ID
+                form
             )
             .then(() => {
                 alert("Message sent! We'll be in touch.");
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="reply_to" className="block text-sm font-medium text-slate-300">
+                            <label htmlFor="reply_to" className="block text-shadow text-sm font-medium text-slate-300">
                                 Email
                             </label>
                             <input
