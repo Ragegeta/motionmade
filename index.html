@@ -1,68 +1,288 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- ✅ Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
-    <!-- ✅ SEO Meta Tags -->
-    <title>MotionMade — Digital Ads That Convert</title>
-    <meta
-      name="description"
-      content="MotionMade helps Brisbane businesses run Facebook, Instagram, and Google ad campaigns that deliver real results — traffic, leads, and sales."
-    />
-    <meta
-      name="keywords"
-      content="Brisbane ads agency, digital marketing, Facebook ads, social media advertising, Google Ads"
-    />
-    <meta name="author" content="MotionMade" />
-
-    <!-- ✅ Open Graph / Social -->
-    <meta property="og:title" content="MotionMade — Digital Ads That Convert" />
-    <meta property="og:description" content="Brisbane’s creative ad agency focused on real ROI." />
-    <meta property="og:image" content="https://motionmadebne.com.au/images/social-preview.png" />
-    <meta property="og:url" content="https://motionmadebne.com.au" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- ✅ Tailwind and React Imports -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://aistudiocdn.com/react@^19.2.0",
-          "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-          "react/": "https://aistudiocdn.com/react@^19.2.0/",
-          "vite": "https://aistudiocdn.com/vite@^7.1.12",
-          "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionMade — Instant Customer Answers for Service Businesses</title>
+    <meta name="description" content="Smart FAQ widget for tradies and service businesses. Your customers get instant answers to pricing, services, and booking questions. 24/7.">
+    <meta property="og:title" content="MotionMade — Instant Customer Answers for Service Businesses">
+    <meta property="og:description" content="Your customers get instant answers. You get more bookings. A smart widget that answers pricing, services and booking questions 24/7.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            color: #111827;
+            font-size: 16px;
+            line-height: 1.6;
         }
-      }
-    </script>
-  </head>
+        .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+        @media (min-width: 768px) { .wrap { padding: 0 32px; } }
 
-  <body class="bg-gradient-to-br from-black via-slate-900 to-blue-900/50 text-slate-200 font-sans">
-    <!-- 🔥 Hidden static form JUST for Netlify detection -->
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      hidden
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p>
-        <label>
-          Don’t fill this out if you're human: <input name="bot-field" />
-        </label>
-      </p>
-      <p><input type="text" name="name" /></p>
-      <p><input type="email" name="email" /></p>
-      <p><textarea name="message"></textarea></p>
-    </form>
-    <!-- end hidden form -->
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 14px 0;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo { font-size: 20px; font-weight: 700; color: #2563EB; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; gap: 24px; }
+        .nav-links a { color: #374151; text-decoration: none; font-size: 15px; }
+        .nav-links a:hover { color: #2563EB; }
+        .btn { display: inline-block; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: background .2s, color .2s; }
+        .btn-primary { background: #2563EB; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; color: #fff; }
+        .btn-secondary { background: #f3f4f6; color: #374151; }
+        .btn-secondary:hover { background: #e5e7eb; }
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+        }
 
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+        /* Sections */
+        section { padding: 48px 0; }
+        section h2 { font-size: 28px; margin-bottom: 24px; color: #111827; }
+        @media (min-width: 768px) { section h2 { font-size: 32px; } }
+
+        /* Hero */
+        .hero { padding: 56px 0 64px; text-align: center; }
+        .hero h1 { font-size: 32px; margin-bottom: 16px; color: #111827; line-height: 1.2; }
+        @media (min-width: 768px) { .hero h1 { font-size: 40px; } }
+        .hero .tagline { font-size: 20px; color: #2563EB; font-weight: 600; margin-bottom: 12px; }
+        .hero .lead { font-size: 18px; color: #4b5563; max-width: 560px; margin: 0 auto 24px; line-height: 1.6; }
+        .hero .sub { font-size: 15px; color: #6b7280; margin-bottom: 32px; }
+        .hero .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 24px; }
+        .hero .trust { font-size: 14px; color: #9ca3af; }
+
+        /* Problem */
+        .problem { background: #f9fafb; }
+        .problem ul { list-style: none; }
+        .problem li { padding: 14px 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: #374151; }
+        .problem li:last-child { border-bottom: none; }
+        .problem .icon { font-size: 20px; flex-shrink: 0; }
+
+        /* Solution */
+        .cards { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
+        @media (min-width: 640px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+        .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; }
+        .card h3 { font-size: 18px; margin-bottom: 8px; color: #111827; }
+        .card p { font-size: 15px; color: #6b7280; line-height: 1.5; }
+        .solution-note { margin-top: 28px; font-size: 15px; color: #4b5563; font-style: italic; }
+
+        /* How it works */
+        .steps { margin-top: 24px; }
+        .step { margin-bottom: 32px; padding-left: 24px; border-left: 3px solid #2563EB; }
+        .step h3 { font-size: 18px; margin-bottom: 8px; color: #111827; }
+        .step p { font-size: 15px; color: #4b5563; line-height: 1.6; }
+        .how-cta { margin-top: 24px; }
+
+        /* Live demo */
+        .demo { background: #f9fafb; }
+        .demo .widget-wrap { max-width: 500px; margin: 24px auto 16px; }
+        .demo .hint { font-size: 14px; color: #6b7280; margin-top: 16px; }
+        .demo .hint code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+        /* Pricing */
+        .pricing-card { max-width: 400px; margin: 0 auto; background: #fff; border: 2px solid #2563EB; border-radius: 16px; padding: 32px; }
+        .pricing-card .price { font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .pricing-card .price-sub { font-size: 16px; color: #6b7280; margin-bottom: 24px; }
+        .pricing-card ul { list-style: none; }
+        .pricing-card li { padding: 10px 0; font-size: 15px; color: #374151; display: flex; align-items: flex-start; gap: 10px; }
+        .pricing-card li::before { content: '✓'; color: #059669; font-weight: 700; }
+        .pricing-cta { margin-top: 24px; }
+        .pricing-cta .btn { width: 100%; text-align: center; }
+        .pricing-note { margin-top: 20px; font-size: 14px; color: #6b7280; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid #e5e7eb; }
+        .faq-item summary { padding: 18px 0; font-weight: 600; font-size: 16px; color: #111827; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '▾'; color: #6b7280; font-size: 14px; transition: transform .2s; }
+        .faq-item[open] summary::after { transform: rotate(180deg); }
+        .faq-item .faq-answer { padding: 0 0 20px 0; font-size: 15px; color: #4b5563; line-height: 1.6; }
+
+        /* CTA + Contact */
+        .footer-cta { text-align: center; padding: 56px 0 48px; background: #f9fafb; }
+        .footer-cta h2 { margin-bottom: 24px; }
+        .footer-cta .contact { margin-top: 28px; font-size: 15px; color: #6b7280; }
+        .footer-cta .contact a { color: #2563EB; text-decoration: none; }
+        .footer-cta .contact a:hover { text-decoration: underline; }
+        .copyright { text-align: center; padding: 24px 20px; font-size: 14px; color: #9ca3af; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap nav">
+            <a href="#" class="logo">MotionMade</a>
+            <nav class="nav-links">
+                <a href="#how">How it works</a>
+                <a href="#demo">Live demo</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+            <!-- STRIPE_LINK: Replace this URL with your Stripe payment link -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary" id="navGetStarted">Get started</a>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="wrap">
+            <h1>Your customers get instant answers.<br>You get more bookings.</h1>
+            <p class="tagline">A smart widget that sits on your website and answers customer questions instantly.</p>
+            <p class="lead">Pricing, availability, services, booking info. 24/7 — even when you're on a job.</p>
+            <p class="sub">No more missed calls. No more same questions. Just instant answers that turn visitors into leads.</p>
+            <div class="cta-row">
+                <a href="#pricing" class="btn btn-primary">Get started — $299 setup</a>
+                <a href="#demo" class="btn btn-secondary">See it in action ↓</a>
+            </div>
+            <p class="trust">Trusted by Brisbane service businesses</p>
+        </div>
+    </section>
+
+    <section class="problem" id="problem">
+        <div class="wrap">
+            <h2>Sound familiar?</h2>
+            <ul>
+                <li><span class="icon">📞</span> Customers call while you're on a job</li>
+                <li><span class="icon">📧</span> Same questions over and over — "how much?", "what areas?", "do you do weekends?"</li>
+                <li><span class="icon">🚫</span> Leads go to your competitor because you couldn't respond fast enough</li>
+                <li><span class="icon">😩</span> You spend your evenings replying to messages instead of relaxing</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="solution" id="solution">
+        <div class="wrap">
+            <h2>MotionMade answers your customers' questions instantly — so you don't have to.</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Instant answers</h3>
+                    <p>Pricing, services, booking info — all instant. No waiting, no back-and-forth.</p>
+                </div>
+                <div class="card">
+                    <h3>Works 24/7</h3>
+                    <p>Even at 2am on a Sunday. Someone visits your site and gets the answer straight away.</p>
+                </div>
+                <div class="card">
+                    <h3>Smart enough for real people</h3>
+                    <p>Handles slang, typos, messy text. "hw much bond clean" gets the right answer.</p>
+                </div>
+            </div>
+            <p class="solution-note">It's not a chatbot. It's not AI waffle. It gives your customers one clear answer to their question. That's it.</p>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="wrap">
+            <h2>How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1. You tell us about your business</h3>
+                    <p>We jump on a quick call. You tell us your pricing, services, areas, and common questions. Takes 10 minutes.</p>
+                </div>
+                <div class="step">
+                    <h3>2. We set it up for you</h3>
+                    <p>We build your FAQ system and install the widget on your website. You don't touch any code.</p>
+                </div>
+                <div class="step">
+                    <h3>3. Customers get instant answers</h3>
+                    <p>Someone visits your site at 10pm and asks "how much for a bond clean?" — they get the answer instantly. No waiting, no missed leads.</p>
+                </div>
+            </div>
+            <a href="#pricing" class="btn btn-primary how-cta">Get started →</a>
+        </div>
+    </section>
+
+    <section class="demo" id="demo">
+        <div class="wrap">
+            <h2>Try it yourself</h2>
+            <p>This is a real MotionMade widget for a Brisbane cleaning business. Ask it anything.</p>
+            <div class="widget-wrap">
+                <div id="motionmade-widget"></div>
+            </div>
+            <script src="https://motionmade-fastapi.onrender.com/widget.js"
+                data-tenant="demo_cleaner"
+                data-name="Brisbane Bond Cleaning"
+                data-phone="0400 111 222"
+                data-color="#2563EB"
+                data-mode="inline"
+                data-api="https://motionmade-fastapi.onrender.com"></script>
+            <p class="hint">Try these: <code>how much for bond clean</code>, <code>do u come to logan</code>, <code>wats included</code></p>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="wrap">
+            <h2>Simple pricing. No lock-in contracts.</h2>
+            <div class="pricing-card">
+                <div class="price">$299 one-time setup</div>
+                <div class="price-sub">+ $49/month</div>
+                <ul>
+                    <li>Custom FAQ system built for your business</li>
+                    <li>Widget installed on your website</li>
+                    <li>Works with any website platform</li>
+                    <li>Dashboard to see what customers ask</li>
+                    <li>Unlimited customer questions</li>
+                    <li>We write and manage the answers for you</li>
+                    <li>Cancel anytime — no lock-in</li>
+                </ul>
+                <!-- STRIPE_LINK: Replace this URL with your Stripe payment link -->
+                <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary pricing-cta">Get started →</a>
+                <p class="pricing-note">"We write and manage the answers for you" — that's what separates us from DIY tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="wrap">
+            <h2>Common questions</h2>
+            <div class="faq-item">
+                <summary>What kind of businesses is this for?</summary>
+                <div class="faq-answer">Any service business — cleaners, plumbers, electricians, landscapers, mobile mechanics, pest control. If customers ask you the same questions, this is for you.</div>
+            </div>
+            <div class="faq-item">
+                <summary>Do I need to be tech-savvy?</summary>
+                <div class="faq-answer">No. We set everything up. You don't touch code.</div>
+            </div>
+            <div class="faq-item">
+                <summary>What if a customer asks something not in the FAQ?</summary>
+                <div class="faq-answer">The widget tells them to contact you directly, with your phone number. No made-up answers.</div>
+            </div>
+            <div class="faq-item">
+                <summary>Can I change the answers later?</summary>
+                <div class="faq-answer">Yes. You suggest changes through your dashboard and we update them for you.</div>
+            </div>
+            <div class="faq-item">
+                <summary>What websites does it work with?</summary>
+                <div class="faq-answer">Everything — WordPress, Squarespace, Wix, Shopify, custom sites. It's one line of code.</div>
+            </div>
+            <div class="faq-item">
+                <summary>Is there a lock-in contract?</summary>
+                <div class="faq-answer">No. Cancel anytime. Month-to-month.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-cta">
+        <div class="wrap">
+            <h2>Ready to stop answering the same questions?</h2>
+            <!-- STRIPE_LINK: Replace this URL with your Stripe payment link -->
+            <a href="https://buy.stripe.com/PLACEHOLDER" class="btn btn-primary">Get started — $299 setup</a>
+            <p class="contact">Or get in touch:<br>📧 <a href="mailto:abbed@motionmadebne.com.au">abbed@motionmadebne.com.au</a><br>📞 <a href="tel:0400000000">0400 000 000</a></p>
+        </div>
+    </section>
+
+    <footer class="copyright">© 2026 MotionMade. Brisbane, Australia.</footer>
+</body>
 </html>
