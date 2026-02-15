@@ -516,9 +516,9 @@ section { padding: 80px 24px; }
 
 <section class="contact" id="contact">
   <div class="container section-center">
-    <span class="section-tag reveal">Get started</span>
-    <h2 class="section-title reveal">Get your front desk set up.</h2>
-    <p class="section-desc reveal" style="margin-bottom:28px;">Tell us about your business and we'll have your front desk ready within 24 hours.</p>
+    <span class="section-tag reveal">Get in touch</span>
+    <h2 class="section-title reveal">Got a question, want a demo, or ready to get started?</h2>
+    <p class="section-desc reveal" style="margin-bottom:28px;">Fill this in and Abbed will get back to you within 24 hours.</p>
     <form id="contactForm" class="contact-form reveal" style="max-width:440px;margin:0 auto;text-align:left;">
       <div class="form-group">
         <label for="cName">Your name</label>
@@ -547,11 +547,11 @@ section { padding: 80px 24px; }
         </select>
       </div>
       <div class="form-group">
-        <label for="cMsg">What do customers ask you most?</label>
-        <textarea id="cMsg" rows="3" placeholder="e.g. How much for a bond clean? What areas?"></textarea>
+        <label for="cMsg">How can we help?</label>
+        <textarea id="cMsg" rows="3" placeholder="e.g. I'd like a demo, I have a question about pricing, I want to get set up..."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Submit</button>
-      <p style="margin-top:10px;font-size:12px;color:var(--ink-muted);text-align:center;">We'll email you within 24 hours. No spam, ever.</p>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send enquiry</button>
+      <p style="margin-top:10px;font-size:12px;color:var(--ink-muted);text-align:center;">Abbed will reply within 24 hours. No spam, ever.</p>
     </form>
     <div id="contactOk" style="display:none;text-align:center;padding:48px 0;">
       <div style="width:56px;height:56px;margin:0 auto 16px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:24px;font-weight:700;">✓</div>
@@ -587,15 +587,39 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scro
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-document.getElementById('contactForm').addEventListener('submit',function(e){
+document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const d={name:document.getElementById('cName').value,business:document.getElementById('cBiz').value,email:document.getElementById('cEmail').value,phone:document.getElementById('cPhone').value,type:document.getElementById('cType').value,message:document.getElementById('cMsg').value};
-  fetch('https://motionmade-fastapi.onrender.com/api/v2/contact-form',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)}).catch(()=>{});
-  const s=encodeURIComponent('MotionMade enquiry from '+d.name);
-  const b=encodeURIComponent('Name: '+d.name+'\nBusiness: '+d.business+'\nEmail: '+d.email+'\nPhone: '+d.phone+'\nType: '+d.type+'\nQuestions: '+d.message);
-  const a=document.createElement('a');a.href='mailto:abbed@motionmadebne.com.au?subject='+s+'&body='+b;a.click();
-  this.style.display='none';
-  document.getElementById('contactOk').style.display='block';
+  const d = {
+    name: document.getElementById('cName').value,
+    business: document.getElementById('cBiz').value,
+    email: document.getElementById('cEmail').value,
+    phone: document.getElementById('cPhone').value,
+    type: document.getElementById('cType').value,
+    message: document.getElementById('cMsg').value
+  };
+
+  // Send to backend (logs it + could forward email later)
+  fetch('https://motionmade-fastapi.onrender.com/api/v2/contact-form', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(d)
+  }).catch(() => {});
+
+  // Open mailto so the email goes directly to Abbed
+  const subject = encodeURIComponent('MotionMade enquiry from ' + d.name + ' (' + d.business + ')');
+  const body = encodeURIComponent(
+    'Name: ' + d.name +
+    '\nBusiness: ' + d.business +
+    '\nEmail: ' + d.email +
+    '\nPhone: ' + d.phone +
+    '\nBusiness type: ' + d.type +
+    '\n\nMessage:\n' + d.message
+  );
+  window.location.href = 'mailto:abbed@motionmadebne.com.au?subject=' + subject + '&body=' + body;
+
+  // Show success
+  this.style.display = 'none';
+  document.getElementById('contactOk').style.display = 'block';
 });
 </script>
 
