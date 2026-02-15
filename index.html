@@ -587,8 +587,12 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scro
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
   const d = {
     name: document.getElementById('cName').value,
     business: document.getElementById('cBiz').value,
@@ -598,24 +602,16 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     message: document.getElementById('cMsg').value
   };
 
-  // Send to backend (logs it + could forward email later)
-  fetch('https://motionmade-fastapi.onrender.com/api/v2/contact-form', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(d)
-  }).catch(() => {});
-
-  // Open mailto so the email goes directly to Abbed
-  const subject = encodeURIComponent('MotionMade enquiry from ' + d.name + ' (' + d.business + ')');
-  const body = encodeURIComponent(
-    'Name: ' + d.name +
-    '\nBusiness: ' + d.business +
-    '\nEmail: ' + d.email +
-    '\nPhone: ' + d.phone +
-    '\nBusiness type: ' + d.type +
-    '\n\nMessage:\n' + d.message
-  );
-  window.location.href = 'mailto:abbed@motionmadebne.com.au?subject=' + subject + '&body=' + body;
+  try {
+    // Send to backend — this logs the lead
+    await fetch('https://motionmade-fastapi.onrender.com/api/v2/contact-form', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(d)
+    });
+  } catch (err) {
+    // Still show success — we'll add email notification from backend
+  }
 
   // Show success
   this.style.display = 'none';
