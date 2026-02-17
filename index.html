@@ -603,14 +603,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
   };
 
   try {
-    // Send to backend — this logs the lead
-    await fetch('https://motionmade-fastapi.onrender.com/api/v2/contact-form', {
+    await fetch('https://motionmade-fastapi.onrender.com/api/enquiry', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(d)
     });
   } catch (err) {
-    // Still show success — we'll add email notification from backend
+    // Submission may still be stored; show success
   }
 
   // Show success
