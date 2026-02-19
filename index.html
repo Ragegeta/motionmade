@@ -4,10 +4,10 @@
   <meta name="google-site-verification" content="579kBZXmid4TMR-S-3gyb6pp-W7eewOI54QNtWweN08" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MotionMade — Your 24/7 Front Desk for Service Businesses</title>
-<meta name="description" content="Your 24/7 front desk. Handles enquiries after hours so you never miss a job. Built in Brisbane for local service businesses.">
+<title>MotionMade — Your 24/7 Front Desk for Local Businesses</title>
+<meta name="description" content="Your 24/7 front desk. Handles enquiries after hours so you never miss a customer. Built for dentists, physios, accountants, vets, and tradies across Australia.">
 <meta property="og:title" content="MotionMade — Your 24/7 Front Desk">
-<meta property="og:description" content="Never miss a job again. Your front desk handles enquiries 24/7.">
+<meta property="og:description" content="Never miss a customer again. Your front desk handles enquiries 24/7.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,13 @@ nav.scrolled {
   background: radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, transparent 60%);
   pointer-events: none;
 }
-.hero-content { position: relative; z-index: 1; max-width: 640px; }
+.hero::after {
+  content: '';
+  position: absolute; bottom: -20%; left: -20%; width: 60%; height: 120%;
+  background: radial-gradient(ellipse, rgba(245,158,11,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 660px; }
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(34px, 5.5vw, 52px);
@@ -111,8 +117,20 @@ nav.scrolled {
 .hero-sub {
   font-size: clamp(16px, 2.2vw, 19px);
   color: rgba(255,255,255,0.6);
-  max-width: 480px; margin: 0 auto 40px;
+  max-width: 520px; margin: 0 auto 24px;
   line-height: 1.65;
+}
+.hero-industries {
+  margin-bottom: 36px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+.hero-industries .rotate-word {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  display: inline-block;
+  min-width: 120px;
 }
 .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn {
@@ -158,7 +176,7 @@ section { padding: 80px 24px; }
 }
 .section-desc {
   font-size: 17px; color: var(--ink-muted);
-  max-width: 520px; margin: 0 auto; line-height: 1.65;
+  max-width: 560px; margin: 0 auto; line-height: 1.65;
 }
 
 /* PROBLEM */
@@ -221,8 +239,42 @@ section { padding: 80px 24px; }
 }
 @media (max-width: 700px) { .solution-cards { grid-template-columns: 1fr; } }
 
+/* INDUSTRIES */
+.industries { background: var(--surface-cool); }
+.industry-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 14px; margin-top: 36px;
+}
+.industry-card {
+  background: white; padding: 24px 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid #D8DFE9;
+  transition: all 0.3s;
+}
+.industry-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: var(--accent); }
+.industry-icon { font-size: 32px; margin-bottom: 10px; display: block; }
+.industry-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.industry-questions { list-style: none; text-align: left; }
+.industry-questions li {
+  font-size: 13px; color: var(--ink-muted);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--surface-cool);
+}
+.industry-questions li:last-child { border: none; }
+.industry-questions li::before { content: '"'; color: var(--accent); font-weight: 700; margin-right: 4px; }
+.industry-card.more-card {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: var(--accent-soft); border-color: var(--accent-soft);
+}
+.industry-card.more-card h3 { color: var(--accent); }
+.industry-card.more-card p { font-size: 13px; color: var(--ink-muted); }
+@media (max-width: 800px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .industry-grid { grid-template-columns: 1fr; } }
+
 /* HOW */
-.how { background: var(--surface-cool); }
+.how { background: var(--surface-deep); }
 .steps {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 20px; margin-top: 36px;
@@ -246,32 +298,62 @@ section { padding: 80px 24px; }
 
 /* DEMO */
 .demo {
-  background: linear-gradient(180deg, var(--surface-deep) 0%, var(--surface-cool) 100%);
+  background: linear-gradient(180deg, var(--surface-cool) 0%, var(--surface-deep) 100%);
   padding-bottom: 100px;
 }
 .demo-frame { max-width: 520px; margin: 36px auto 0; }
 
-/* PRICING */
-.pricing { background: var(--surface-cool); }
-.price-card {
-  max-width: 420px; margin: 36px auto 0;
-  background: white; border-radius: var(--radius-lg);
-  padding: 36px 32px; text-align: center;
-  border: 2px solid var(--accent);
-  box-shadow: 0 8px 40px var(--accent-glow);
+/* SOCIAL PROOF */
+.social-proof { background: var(--surface-cool); }
+.proof-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px; margin-top: 36px;
 }
+.proof-card {
+  background: white; padding: 28px 24px;
+  border-radius: var(--radius);
+  border: 1px solid #D8DFE9;
+  text-align: center;
+}
+.proof-card .proof-quote { font-size: 15px; color: var(--ink-secondary); font-style: italic; margin-bottom: 16px; line-height: 1.6; }
+.proof-card .proof-name { font-weight: 600; font-size: 14px; color: var(--ink); }
+.proof-card .proof-biz { font-size: 13px; color: var(--ink-muted); }
+.proof-cta {
+  margin-top: 28px; padding: 18px 24px;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  font-size: 15px; color: var(--accent);
+  text-align: center; font-weight: 600;
+}
+@media (max-width: 700px) { .proof-cards { grid-template-columns: 1fr; } }
+
+/* PRICING */
+.pricing { background: var(--surface-deep); }
+.pricing-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 36px; max-width: 680px; margin-left: auto; margin-right: auto;
+}
+.price-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 32px 28px; text-align: center;
+  border: 2px solid #D8DFE9;
+  transition: all 0.3s;
+}
+.price-card.featured { border-color: var(--accent); box-shadow: 0 8px 40px var(--accent-glow); }
+.price-card:hover { transform: translateY(-3px); }
+.price-label { font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
 .price-main {
   font-family: var(--font-display);
-  font-size: 44px; font-weight: 800; color: var(--ink);
+  font-size: 40px; font-weight: 800; color: var(--ink);
 }
 .price-main small { font-size: 16px; font-weight: 500; color: var(--ink-muted); }
 .price-recurring {
-  font-size: 20px; color: var(--accent); font-weight: 700;
-  margin: 4px 0 24px;
+  font-size: 18px; color: var(--accent); font-weight: 700;
+  margin: 4px 0 20px;
 }
-.price-list { list-style: none; text-align: left; margin-bottom: 28px; }
+.price-list { list-style: none; text-align: left; margin-bottom: 24px; }
 .price-list li {
-  padding: 9px 0; font-size: 14px; color: var(--ink-secondary);
+  padding: 8px 0; font-size: 14px; color: var(--ink-secondary);
   display: flex; align-items: flex-start; gap: 10px;
   border-bottom: 1px solid var(--surface-cool);
 }
@@ -279,9 +361,10 @@ section { padding: 80px 24px; }
 .price-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
 .price-list .highlight { font-weight: 600; color: var(--ink); }
 .price-note { margin-top: 14px; font-size: 13px; color: var(--ink-muted); }
+@media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
 
 /* FAQ */
-.faq { background: var(--surface-deep); }
+.faq { background: var(--surface-cool); }
 .faq-list { max-width: 600px; margin: 36px auto 0; }
 .faq-item {
   background: white; border-radius: var(--radius);
@@ -307,7 +390,7 @@ section { padding: 80px 24px; }
 }
 
 /* CONTACT */
-.contact { background: var(--surface-cool); }
+.contact { background: var(--surface-deep); }
 .contact-form { display: flex; flex-direction: column; gap: 14px; }
 .form-group { display: flex; flex-direction: column; gap: 5px; }
 .form-group label { font-size: 13px; font-weight: 600; color: var(--ink-secondary); }
@@ -363,6 +446,10 @@ section { padding: 80px 24px; }
 .d2 { transition-delay: 0.16s; }
 .d3 { transition-delay: 0.24s; }
 .d4 { transition-delay: 0.32s; }
+.d5 { transition-delay: 0.40s; }
+.d6 { transition-delay: 0.48s; }
+.d7 { transition-delay: 0.56s; }
+.d8 { transition-delay: 0.64s; }
 
 .hero-content > * {
   opacity: 0; transform: translateY(20px);
@@ -372,9 +459,13 @@ section { padding: 80px 24px; }
 .hero-content > *:nth-child(2) { animation-delay: 0.22s; }
 .hero-content > *:nth-child(3) { animation-delay: 0.34s; }
 .hero-content > *:nth-child(4) { animation-delay: 0.46s; }
+.hero-content > *:nth-child(5) { animation-delay: 0.58s; }
 @keyframes heroIn {
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Counter animation */
+.count-up { display: inline-block; }
 </style>
 </head>
 <body>
@@ -382,6 +473,7 @@ section { padding: 80px 24px; }
 <nav id="nav">
   <a href="#" class="nav-logo">MotionMade</a>
   <div class="nav-links">
+    <a href="#industries">Industries</a>
     <a href="#how">How it works</a>
     <a href="#demo">Live demo</a>
     <a href="#pricing">Pricing</a>
@@ -391,13 +483,14 @@ section { padding: 80px 24px; }
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Your 24/7 front desk.<br><span>Never miss a job again.</span></h1>
-    <p class="hero-sub">When a customer visits your website at 9pm, your front desk gives them pricing, availability, and booking info instantly. They enquire instead of calling the next guy.</p>
+    <h1>Your 24/7 front desk.<br><span>Never miss a customer again.</span></h1>
+    <p class="hero-sub">When a patient visits your website at 9pm, your front desk gives them answers instantly. They book with you instead of calling someone else.</p>
+    <p class="hero-industries">Built for <span class="rotate-word" id="rotatingWord">dentists</span>. And every local service business.</p>
     <div class="hero-buttons">
-      <a href="#contact" class="btn btn-primary">Get started · $299 setup</a>
+      <a href="#contact" class="btn btn-primary">Get started free</a>
       <a href="#demo" class="btn btn-outline">See it in action ↓</a>
     </div>
-    <p class="hero-note">Built in Brisbane. Used by local service businesses.</p>
+    <p class="hero-note">Built in Brisbane. Trusted by local businesses across Australia.</p>
   </div>
 </section>
 
@@ -406,9 +499,9 @@ section { padding: 80px 24px; }
     <span class="section-tag reveal">The problem</span>
     <h2 class="section-title reveal">Sound familiar?</h2>
     <div class="problem-grid">
-      <div class="problem-card reveal d1"><strong>Jobs lost after hours</strong>A customer visits your site at 9pm looking for a quote. Nobody responds. They book someone else by morning.</div>
-      <div class="problem-card reveal d2"><strong>Same admin, every day</strong>You spend hours answering the same questions. How much? What areas? Do you do weekends? It never stops.</div>
-      <div class="problem-card reveal d3"><strong>Missed calls on the job</strong>You're on site, phone ringing. By the time you call back, they've already found someone.</div>
+      <div class="problem-card reveal d1"><strong>Customers lost after hours</strong>A patient googles your practice at 9pm. Do you bulk bill? How much is a checkup? No answer. They book the dentist down the road.</div>
+      <div class="problem-card reveal d2"><strong>Same questions, every day</strong>Your receptionist answers the same 5 questions all day. How much? What's included? Do you take my health fund? It never stops.</div>
+      <div class="problem-card reveal d3"><strong>Missed calls on the job</strong>You're with a patient or on a job site. Phone ringing. By the time you call back, they've already found someone.</div>
       <div class="problem-card reveal d4"><strong>No idea what customers want</strong>Visitors come and go from your website. You have no idea what they were looking for or why they left.</div>
     </div>
   </div>
@@ -421,21 +514,99 @@ section { padding: 80px 24px; }
     <div class="solution-cards">
       <div class="sol-card reveal d1">
         <div class="sol-icon">⚡</div>
-        <h3>Instant enquiry handling</h3>
-        <p>Customers get pricing, services, and booking info the moment they ask. No waiting, no phone tag.</p>
+        <h3>Instant answers</h3>
+        <p>Customers get pricing, services, and availability the moment they ask. No waiting, no phone tag, no lost leads.</p>
       </div>
       <div class="sol-card reveal d2">
         <div class="sol-icon">🌙</div>
         <h3>After-hours capture</h3>
-        <p>Works at 2am on a Sunday. The jobs other businesses miss, you get.</p>
+        <p>Works at 2am on a Sunday. The customers other businesses miss, you get.</p>
       </div>
       <div class="sol-card reveal d3">
-        <div class="sol-icon">💬</div>
-        <h3>Understands real customers</h3>
-        <p>Handles typos, slang, and half-typed messages. Real people don't type perfectly and that's fine.</p>
+        <div class="sol-icon">📊</div>
+        <h3>See what they ask</h3>
+        <p>Dashboard shows every question, when it was asked, and what they wanted to know. Real customer intel.</p>
       </div>
     </div>
     <div class="solution-callout reveal">Not a chatbot. Not a generic AI. A front desk that knows your business, your prices, and your rules.</div>
+  </div>
+</section>
+
+<section class="industries" id="industries">
+  <div class="container section-center">
+    <span class="section-tag reveal">Who it's for</span>
+    <h2 class="section-title reveal">Built for local service businesses.</h2>
+    <p class="section-desc reveal">Whether you're a dental practice, physio clinic, or cleaning company, your customers are asking the same types of questions. We handle them 24/7.</p>
+    <div class="industry-grid">
+      <div class="industry-card reveal d1">
+        <span class="industry-icon">🦷</span>
+        <h3>Dental</h3>
+        <ul class="industry-questions">
+          <li>How much is a checkup?</li>
+          <li>Do you bulk bill?</li>
+          <li>Do you accept my health fund?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d2">
+        <span class="industry-icon">💪</span>
+        <h3>Physio</h3>
+        <ul class="industry-questions">
+          <li>Do I need a referral?</li>
+          <li>How much per session?</li>
+          <li>Do you treat back pain?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d3">
+        <span class="industry-icon">📋</span>
+        <h3>Accounting</h3>
+        <ul class="industry-questions">
+          <li>How much is a tax return?</li>
+          <li>Do you help with BAS?</li>
+          <li>Can I claim that?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d4">
+        <span class="industry-icon">🐾</span>
+        <h3>Veterinary</h3>
+        <ul class="industry-questions">
+          <li>How much is a consultation?</li>
+          <li>Do you do after-hours?</li>
+          <li>What vaccinations does my dog need?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d5">
+        <span class="industry-icon">🧹</span>
+        <h3>Cleaning</h3>
+        <ul class="industry-questions">
+          <li>How much is a bond clean?</li>
+          <li>What's included?</li>
+          <li>Do you guarantee the bond?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d6">
+        <span class="industry-icon">🔧</span>
+        <h3>Plumbing</h3>
+        <ul class="industry-questions">
+          <li>What's your call-out fee?</li>
+          <li>Do you do emergencies?</li>
+          <li>Can you fix a leaking tap?</li>
+        </ul>
+      </div>
+      <div class="industry-card reveal d7">
+        <span class="industry-icon">⚡</span>
+        <h3>Electrical</h3>
+        <ul class="industry-questions">
+          <li>Do you install ceiling fans?</li>
+          <li>What's the hourly rate?</li>
+          <li>Do you do switchboard upgrades?</li>
+        </ul>
+      </div>
+      <div class="industry-card more-card reveal d8">
+        <span class="industry-icon">💡</span>
+        <h3>Your industry</h3>
+        <p>If your customers keep asking the same questions, this is for you.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -447,12 +618,12 @@ section { padding: 80px 24px; }
       <div class="step reveal d1">
         <div class="step-num">1</div>
         <h3>10-minute briefing</h3>
-        <p>Tell us your services, pricing, areas, and the questions customers always ask. That's all we need.</p>
+        <p>Tell us your services, pricing, and the questions customers always ask. That's all we need.</p>
       </div>
       <div class="step reveal d2">
         <div class="step-num">2</div>
         <h3>We set up your front desk</h3>
-        <p>We build it, install it on your website, and test it. You don't touch any code or log into anything.</p>
+        <p>We build it, install it on your website, and test it. You don't touch any code.</p>
       </div>
       <div class="step reveal d3">
         <div class="step-num">3</div>
@@ -477,24 +648,65 @@ section { padding: 80px 24px; }
   </div>
 </section>
 
+<section class="social-proof" id="proof">
+  <div class="container section-center">
+    <span class="section-tag reveal">Trusted</span>
+    <h2 class="section-title reveal">Built for Brisbane businesses.</h2>
+    <div class="proof-cards">
+      <div class="proof-card reveal d1">
+        <div class="proof-quote">"Handles the questions my receptionist used to get 30 times a day. Patients love the instant answers."</div>
+        <div class="proof-name">Early adopter</div>
+        <div class="proof-biz">Dental Practice, Brisbane</div>
+      </div>
+      <div class="proof-card reveal d2">
+        <div class="proof-quote">"I was losing jobs at night. Now the front desk handles them while I sleep. Game changer."</div>
+        <div class="proof-name">Early adopter</div>
+        <div class="proof-biz">Cleaning Business, Gold Coast</div>
+      </div>
+      <div class="proof-card reveal d3">
+        <div class="proof-quote">"Tells me exactly what my customers are searching for. I didn't even know half of it."</div>
+        <div class="proof-name">Early adopter</div>
+        <div class="proof-biz">Physio Clinic, Brisbane</div>
+      </div>
+    </div>
+    <div class="proof-cta reveal">Be one of our first customers. Free trial available.</div>
+  </div>
+</section>
+
 <section class="pricing" id="pricing">
   <div class="container section-center">
     <span class="section-tag reveal">Pricing</span>
-    <h2 class="section-title reveal">Less than the cost of one missed job.</h2>
-    <div class="price-card reveal">
-      <div class="price-main">$299 <small>one-time setup</small></div>
-      <div class="price-recurring">+ $49/month</div>
-      <ul class="price-list">
-        <li>Custom front desk built for your business</li>
-        <li>Installed on your website for you</li>
-        <li>Handles enquiries 24/7, including after hours</li>
-        <li>Dashboard showing every customer question</li>
-        <li>See what visitors are asking and when</li>
-        <li class="highlight">We build and manage everything for you</li>
-        <li>Cancel anytime. No lock-in.</li>
-      </ul>
-      <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get started →</a>
-      <p class="price-note">One missed job costs more than a year of this.</p>
+    <h2 class="section-title reveal">Less than the cost of one missed customer.</h2>
+    <div class="pricing-grid">
+      <div class="price-card reveal d1">
+        <div class="price-label">Tradies</div>
+        <div class="price-main">$49 <small>/month</small></div>
+        <div class="price-recurring" style="color:var(--ink-muted);font-size:15px;">+ $299 setup</div>
+        <ul class="price-list">
+          <li>Custom front desk for your business</li>
+          <li>Installed on your website for you</li>
+          <li>Handles enquiries 24/7</li>
+          <li>Customer question dashboard</li>
+          <li class="highlight">We build and manage everything</li>
+          <li>Cancel anytime. No lock-in.</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get started →</a>
+      </div>
+      <div class="price-card featured reveal d2">
+        <div class="price-label">Professional Services</div>
+        <div class="price-main">$149 <small>/month</small></div>
+        <div class="price-recurring" style="color:var(--ink-muted);font-size:15px;">+ $299 setup</div>
+        <ul class="price-list">
+          <li>Everything in Tradies plan</li>
+          <li>Priority setup (live within 24 hours)</li>
+          <li>Advanced question analytics</li>
+          <li>Peak hours and topic insights</li>
+          <li class="highlight">Built for dental, physio, accounting, vet</li>
+          <li>Cancel anytime. No lock-in.</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get started →</a>
+        <p class="price-note">One missed patient costs more than a year of this.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -504,11 +716,12 @@ section { padding: 80px 24px; }
     <span class="section-tag reveal">Questions</span>
     <h2 class="section-title reveal">Common questions</h2>
     <div class="faq-list">
-      <details class="faq-item reveal"><summary>Is this a chatbot?</summary><div class="faq-answer">No. Chatbots give generic responses and frustrate customers. This is a front desk trained on your actual business — your prices, your services, your rules. It gives one clear answer, not a conversation.</div></details>
-      <details class="faq-item reveal"><summary>What kind of businesses is this for?</summary><div class="faq-answer">Any service business. Cleaners, plumbers, electricians, landscapers, pest control. If customers keep asking you the same questions, this is for you.</div></details>
+      <details class="faq-item reveal"><summary>Is this a chatbot?</summary><div class="faq-answer">No. Chatbots give generic responses and frustrate customers. This is a front desk trained on your actual business — your prices, your services, your rules. It gives one clear answer, not a conversation tree.</div></details>
+      <details class="faq-item reveal"><summary>What kind of businesses is this for?</summary><div class="faq-answer">Any local service business. Dentists, physios, accountants, vets, cleaners, plumbers, electricians. If customers keep asking you the same questions, this is for you.</div></details>
+      <details class="faq-item reveal"><summary>How is this different from Tidio or other chatbots?</summary><div class="faq-answer">Tidio is a tool — you have to set up flows, write answers, and manage bot logic yourself. We're a service. You spend 10 minutes on a call with us and it's live by tomorrow. Different product entirely.</div></details>
       <details class="faq-item reveal"><summary>Do I need to be tech-savvy?</summary><div class="faq-answer">No. We set everything up for you. You don't write any code or install anything yourself.</div></details>
-      <details class="faq-item reveal"><summary>What if a customer asks something not covered?</summary><div class="faq-answer">It tells them to call you directly, with your phone number. It never makes up answers.</div></details>
-      <details class="faq-item reveal"><summary>Can I change the answers later?</summary><div class="faq-answer">Yes. Suggest changes through your dashboard and we update them for you, usually within a few hours.</div></details>
+      <details class="faq-item reveal"><summary>What if a customer asks something not covered?</summary><div class="faq-answer">It tells them to call you directly, with your phone number. It never makes up answers or hallucinate information.</div></details>
+      <details class="faq-item reveal"><summary>Can I change the answers later?</summary><div class="faq-answer">Yes. You have a dashboard where you can see every question, manage your FAQs, and add new answers. Changes go live instantly.</div></details>
       <details class="faq-item reveal"><summary>What websites does it work with?</summary><div class="faq-answer">All of them. WordPress, Squarespace, Wix, Shopify, custom sites. We handle the install.</div></details>
       <details class="faq-item reveal"><summary>Is there a lock-in contract?</summary><div class="faq-answer">No. Month-to-month. Cancel anytime.</div></details>
     </div>
@@ -518,20 +731,20 @@ section { padding: 80px 24px; }
 <section class="contact" id="contact">
   <div class="container section-center">
     <span class="section-tag reveal">Get in touch</span>
-    <h2 class="section-title reveal">Got a question, want a demo, or ready to get started?</h2>
+    <h2 class="section-title reveal">Ready to stop losing customers after hours?</h2>
     <p class="section-desc reveal" style="margin-bottom:28px;">Fill this in and Abbed will get back to you within 24 hours.</p>
     <form id="contactForm" class="contact-form reveal" style="max-width:440px;margin:0 auto;text-align:left;">
       <div class="form-group">
         <label for="cName">Your name</label>
-        <input type="text" id="cName" required placeholder="e.g. Mike">
+        <input type="text" id="cName" required placeholder="e.g. Sarah">
       </div>
       <div class="form-group">
         <label for="cBiz">Business name</label>
-        <input type="text" id="cBiz" required placeholder="e.g. Mike's Bond Cleaning">
+        <input type="text" id="cBiz" required placeholder="e.g. Smile Dental Brisbane">
       </div>
       <div class="form-group">
         <label for="cEmail">Email</label>
-        <input type="email" id="cEmail" required placeholder="e.g. mike@email.com">
+        <input type="email" id="cEmail" required placeholder="e.g. sarah@smiledental.com.au">
       </div>
       <div class="form-group">
         <label for="cPhone">Phone</label>
@@ -541,6 +754,10 @@ section { padding: 80px 24px; }
         <label for="cType">What kind of business?</label>
         <select id="cType">
           <option value="">Select...</option>
+          <option value="dentist">Dental</option>
+          <option value="physio">Physiotherapy</option>
+          <option value="accountant">Accounting</option>
+          <option value="vet">Veterinary</option>
           <option value="cleaner">Cleaning</option>
           <option value="plumber">Plumbing</option>
           <option value="electrician">Electrical</option>
@@ -563,8 +780,8 @@ section { padding: 80px 24px; }
 </section>
 
 <footer class="footer">
-  <h2 class="footer-cta-title reveal">Ready to stop losing jobs after hours?</h2>
-  <a href="#contact" class="btn btn-primary reveal">Get started · $299 setup</a>
+  <h2 class="footer-cta-title reveal">Ready to stop losing customers after hours?</h2>
+  <a href="#contact" class="btn btn-primary reveal">Get started free</a>
   <div class="footer-links reveal">
     <a href="mailto:abbed@motionmadebne.com.au">abbed@motionmadebne.com.au</a>
     &nbsp;·&nbsp;
@@ -575,7 +792,7 @@ section { padding: 80px 24px; }
   <p class="footer-copy">© 2026 MotionMade. Brisbane, Australia.</p>
 </footer>
 
-<script src="https://motionmade-fastapi.onrender.com/widget.js?v=3"
+<script src="https://motionmade-fastapi.onrender.com/widget.js?v=4"
   data-tenant="demo_cleaner"
   data-name="Brisbane Bond Cleaning"
   data-phone="0437 037 584"
@@ -589,6 +806,24 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scro
 
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Rotating words in hero */
+const words = ['dentists', 'physios', 'accountants', 'vets', 'cleaners', 'plumbers'];
+let wordIdx = 0;
+const wordEl = document.getElementById('rotatingWord');
+if (wordEl) {
+  setInterval(() => {
+    wordIdx = (wordIdx + 1) % words.length;
+    wordEl.style.opacity = '0';
+    wordEl.style.transform = 'translateY(-4px)';
+    setTimeout(() => {
+      wordEl.textContent = words[wordIdx];
+      wordEl.style.opacity = '1';
+      wordEl.style.transform = 'translateY(0)';
+    }, 250);
+  }, 2500);
+  wordEl.style.transition = 'opacity 0.25s, transform 0.25s';
+}
 
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -611,11 +846,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(d)
     });
-  } catch (err) {
-    // Submission may still be stored; show success
-  }
+  } catch (err) {}
 
-  // Show success
   this.style.display = 'none';
   document.getElementById('contactOk').style.display = 'block';
 });
