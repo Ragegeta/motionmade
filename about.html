@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — MotionMade Google Ads Management</title>
+<meta name="description" content="MotionMade is run by Abbed, a Google Ads certified specialist based in Brisbane. Focused exclusively on results-driven Google Ads for local businesses.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav" class="scrolled">
+  <a href="/" class="nav-logo">MotionMade</a>
+  <div class="nav-links">
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/results">Results</a>
+    <a href="/contact" class="nav-cta">Free Audit →</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/services">Services</a>
+  <a href="/about">About</a>
+  <a href="/results">Results</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Free Audit →</a>
+</div>
+
+<div class="page-header">
+  <h1>About MotionMade</h1>
+  <p>One person. One focus. Real results for local businesses.</p>
+</div>
+
+<section class="about-content">
+  <div class="about-inner">
+
+    <div class="about-photo">
+      <span>Your photo here</span>
+    </div>
+
+    <h2 style="margin-top:0;">The short version</h2>
+    <p>I'm Abbed. I run MotionMade from Brisbane. I'm Google Ads certified, I have a background in digital marketing, and I focus exclusively on one thing: getting local service businesses more leads from Google Ads.</p>
+    <p>I'm not an agency with 50 people and a fancy office. I'm one person who's very good at this, and I work with a small number of clients so I can give each one real attention. When you work with me, you work with me — not an account manager who's juggling 40 other clients.</p>
+
+    <h2>Why I started MotionMade</h2>
+    <p>I saw too many small business owners getting burned by Google Ads. Either they tried it themselves and wasted money because the platform is genuinely confusing, or they hired an agency that charged them a fortune and sent them reports full of jargon they couldn't understand.</p>
+    <p>The problem was always the same: no one was focused on the thing that actually matters — generating leads. Not impressions, not clicks, not "brand awareness." Leads. Phone calls. Enquiries. New clients walking through the door.</p>
+    <p>That's what MotionMade does. Nothing more, nothing less.</p>
+
+    <h2>How I work</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Transparent</h3>
+        <p>You see every dollar spent. You own the Google Ads account. Monthly reports that make sense. No hidden fees, no surprises.</p>
+      </div>
+      <div class="value-card">
+        <h3>Results-Focused</h3>
+        <p>If it's not generating leads, we change it. I don't optimise for vanity metrics. I optimise for your phone ringing.</p>
+      </div>
+      <div class="value-card">
+        <h3>No Lock-In Contracts</h3>
+        <p>You stay because it works, not because you're stuck. Month-to-month. Cancel anytime. That's how it should be.</p>
+      </div>
+    </div>
+
+    <h2>Who I work with</h2>
+    <p>Local service businesses in Brisbane (and eventually Australia-wide). Accountants, tradies, dentists, physios, lawyers, construction companies, RTOs — anyone who needs more clients finding them on Google.</p>
+    <p>If you're a local business that relies on leads and enquiries, we should talk.</p>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="/contact" class="btn btn-primary btn-lg">Get in Touch →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo">MotionMade</a>
+      <p>Google Ads management for local service businesses in Brisbane.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Pages</h4>
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/results">Results</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Services</h4>
+      <a href="/services#management">Google Ads Management</a>
+      <a href="/services#audit">Google Ads Audit</a>
+      <a href="/services#tracking">Conversion Tracking</a>
+      <a href="/services#reporting">Monthly Reporting</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Contact</h4>
+      <a href="mailto:abbed@motionmadebne.com.au">abbed@motionmadebne.com.au</a>
+      <a href="tel:+61437037584">0437 037 584</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MotionMade. Brisbane, Australia.</p>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60 || true));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.getElementById('navToggle').addEventListener('click', function() {
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.toggle('open');
+  this.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('navToggle').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+</script>
+
+</body>
+</html>

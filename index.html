@@ -1,768 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="579kBZXmid4TMR-S-3gyb6pp-W7eewOI54QNtWweN08" />
+<meta name="google-site-verification" content="579kBZXmid4TMR-S-3gyb6pp-W7eewOI54QNtWweN08" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MotionMade — Your 24/7 Front Desk for Local Businesses</title>
-<meta name="description" content="Your 24/7 front desk. Handles enquiries after hours so you never miss a customer. Built for dentists, physios, accountants, vets, and tradies across Australia.">
-<meta property="og:title" content="MotionMade — Your 24/7 Front Desk">
-<meta property="og:description" content="Never miss a customer again. Your front desk handles enquiries 24/7.">
+<title>MotionMade — Google Ads Management for Local Businesses in Brisbane</title>
+<meta name="description" content="Google Ads management for local service businesses in Brisbane. More leads, transparent reporting, no lock-in contracts. Get a free audit today.">
+<meta property="og:title" content="MotionMade — Google Ads Management for Local Businesses">
+<meta property="og:description" content="Stop wasting money on ads that don't work. We manage your Google Ads so you get more phone calls, more enquiries, and more clients.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-:root {
-  --ink: #0B1222;
-  --ink-secondary: #2D3A4F;
-  --ink-muted: #6B7A94;
-  --surface: #FFFFFF;
-  --surface-cool: #F0F3F8;
-  --surface-deep: #E4EAF2;
-  --surface-dark: #0F1B2D;
-  --accent: #2563EB;
-  --accent-dark: #1A4FCC;
-  --accent-glow: rgba(37, 99, 235, 0.12);
-  --accent-soft: #DBEAFE;
-  --warm: #F59E0B;
-  --radius: 12px;
-  --radius-lg: 20px;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MotionMade",
+  "description": "Google Ads management for local service businesses in Brisbane",
+  "url": "https://motionmadebne.com.au",
+  "telephone": "+61437037584",
+  "email": "abbed@motionmadebne.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brisbane",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -27.4698,
+      "longitude": 153.0251
+    }
+  },
+  "priceRange": "$$"
 }
+</script>
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--surface-dark);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 18px 28px;
-  display: flex; align-items: center; justify-content: space-between;
-  transition: all 0.4s ease;
-}
-nav.scrolled {
-  background: rgba(15, 27, 45, 0.92);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-  padding: 14px 28px;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 22px; font-weight: 700;
-  color: white; text-decoration: none;
-}
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a {
-  color: rgba(255,255,255,0.65); text-decoration: none;
-  font-size: 14px; font-weight: 500; letter-spacing: 0.3px;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: white; }
-.nav-cta {
-  background: var(--accent) !important; color: white !important;
-  padding: 10px 22px; border-radius: 8px;
-  font-weight: 600 !important;
-  transition: all 0.3s !important;
-}
-.nav-cta:hover { background: var(--accent-dark) !important; transform: translateY(-1px); }
-@media (max-width: 700px) {
-  .nav-links a:not(.nav-cta) { display: none; }
-}
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  padding: 120px 24px 100px;
-  background: linear-gradient(170deg, #070D18 0%, #0F1B2D 35%, #162A4A 65%, #1A3A6B 100%);
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; top: -50%; right: -30%; width: 80%; height: 200%;
-  background: radial-gradient(ellipse, rgba(37,99,235,0.08) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute; bottom: -20%; left: -20%; width: 60%; height: 120%;
-  background: radial-gradient(ellipse, rgba(245,158,11,0.04) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 1; max-width: 660px; }
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 5.5vw, 52px);
-  font-weight: 800; color: white;
-  line-height: 1.15; margin-bottom: 20px;
-}
-.hero h1 span {
-  background: linear-gradient(135deg, var(--warm) 0%, #FBBF24 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.hero-sub {
-  font-size: clamp(16px, 2.2vw, 19px);
-  color: rgba(255,255,255,0.6);
-  max-width: 520px; margin: 0 auto 24px;
-  line-height: 1.65;
-}
-.hero-industries {
-  margin-bottom: 36px;
-  font-size: 15px;
-  color: rgba(255,255,255,0.45);
-  font-weight: 500;
-}
-.hero-industries .rotate-word {
-  color: rgba(255,255,255,0.85);
-  font-weight: 600;
-  display: inline-block;
-  min-width: 120px;
-}
-.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 15px 28px; border-radius: 10px;
-  font-size: 15px; font-weight: 600;
-  text-decoration: none; cursor: pointer; border: none;
-  transition: all 0.3s ease;
-  font-family: var(--font-body);
-}
-.btn-primary {
-  background: var(--accent); color: white;
-  box-shadow: 0 4px 20px rgba(37,99,235,0.35);
-}
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.4); }
-.btn-outline {
-  background: transparent; color: rgba(255,255,255,0.8);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.btn-outline:hover { background: rgba(255,255,255,0.08); color: white; transform: translateY(-2px); }
-.hero-note {
-  margin-top: 48px; font-size: 13px;
-  color: rgba(255,255,255,0.3); letter-spacing: 0.5px;
-}
-
-/* SECTIONS */
-section { padding: 80px 24px; }
-.container { max-width: 880px; margin: 0 auto; }
-.section-center { text-align: center; }
-.section-tag {
-  display: inline-block;
-  font-size: 12px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 2.5px;
-  color: var(--accent); margin-bottom: 14px;
-  background: var(--accent-soft);
-  padding: 5px 14px; border-radius: 20px;
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.8vw, 38px);
-  font-weight: 700; color: var(--ink);
-  line-height: 1.2; margin-bottom: 14px;
-}
-.section-desc {
-  font-size: 17px; color: var(--ink-muted);
-  max-width: 560px; margin: 0 auto; line-height: 1.65;
-}
-
-/* PROBLEM */
-.problem { background: var(--surface-cool); }
-.problem-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 14px; margin-top: 36px;
-}
-.problem-card {
-  padding: 22px 24px;
-  background: white;
-  border-radius: var(--radius);
-  border-left: 3px solid var(--warm);
-  font-size: 15px; color: var(--ink-secondary);
-  line-height: 1.55;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  transition: all 0.3s;
-}
-.problem-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
-.problem-card strong { color: var(--ink); display: block; margin-bottom: 4px; }
-@media (max-width: 600px) { .problem-grid { grid-template-columns: 1fr; } }
-
-/* SOLUTION */
-.solution { background: var(--surface-deep); }
-.solution-cards {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 16px; margin-top: 36px;
-}
-.sol-card {
-  background: white; padding: 28px 24px;
-  border-radius: var(--radius);
-  text-align: center;
-  border: 1px solid #D8DFE9;
-  transition: all 0.35s ease;
-}
-.sol-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border-color: var(--accent);
-}
-.sol-icon {
-  width: 52px; height: 52px; margin: 0 auto 14px;
-  background: var(--accent-soft);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-}
-.sol-card h3 {
-  font-family: var(--font-display);
-  font-size: 19px; font-weight: 700;
-  margin-bottom: 6px;
-}
-.sol-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; }
-.solution-callout {
-  margin-top: 28px; padding: 18px 24px;
-  background: white; border: 1px solid var(--accent);
-  border-radius: var(--radius);
-  font-size: 15px; color: var(--ink-secondary);
-  text-align: center; font-weight: 500;
-}
-@media (max-width: 700px) { .solution-cards { grid-template-columns: 1fr; } }
-
-/* INDUSTRIES */
-.industries { background: var(--surface-cool); }
-.industry-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 14px; margin-top: 36px;
-}
-.industry-card {
-  background: white; padding: 24px 20px;
-  border-radius: var(--radius);
-  text-align: center;
-  border: 1px solid #D8DFE9;
-  transition: all 0.3s;
-}
-.industry-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color: var(--accent); }
-.industry-icon { font-size: 32px; margin-bottom: 10px; display: block; }
-.industry-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-.industry-questions { list-style: none; text-align: left; }
-.industry-questions li {
-  font-size: 13px; color: var(--ink-muted);
-  padding: 4px 0;
-  border-bottom: 1px solid var(--surface-cool);
-}
-.industry-questions li:last-child { border: none; }
-.industry-questions li::before { content: '"'; color: var(--accent); font-weight: 700; margin-right: 4px; }
-.industry-card.more-card {
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  background: var(--accent-soft); border-color: var(--accent-soft);
-}
-.industry-card.more-card h3 { color: var(--accent); }
-.industry-card.more-card p { font-size: 13px; color: var(--ink-muted); }
-@media (max-width: 800px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px) { .industry-grid { grid-template-columns: 1fr; } }
-
-/* HOW */
-.how { background: var(--surface-deep); }
-.steps {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 20px; margin-top: 36px;
-  counter-reset: step;
-}
-.step { text-align: center; padding: 24px 16px; }
-.step-num {
-  width: 44px; height: 44px; margin: 0 auto 14px;
-  background: var(--accent); color: white;
-  border-radius: 50%; font-weight: 700; font-size: 18px;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.25);
-}
-.step h3 {
-  font-family: var(--font-display);
-  font-size: 18px; font-weight: 700;
-  margin-bottom: 6px;
-}
-.step p { font-size: 14px; color: var(--ink-muted); line-height: 1.6; }
-@media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }
-
-/* DEMO */
-.demo {
-  background: linear-gradient(180deg, var(--surface-cool) 0%, var(--surface-deep) 100%);
-  padding-bottom: 100px;
-}
-.demo-frame { max-width: 520px; margin: 36px auto 0; }
-
-/* PRICING */
-.pricing { background: var(--surface-deep); }
-.pricing-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 20px; margin-top: 36px; max-width: 680px; margin-left: auto; margin-right: auto;
-}
-.price-card {
-  background: white; border-radius: var(--radius-lg);
-  padding: 32px 28px; text-align: center;
-  border: 2px solid #D8DFE9;
-  transition: all 0.3s;
-}
-.price-card.featured { border-color: var(--accent); box-shadow: 0 8px 40px var(--accent-glow); }
-.price-card:hover { transform: translateY(-3px); }
-.price-label { font-size: 13px; font-weight: 600; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.price-main {
-  font-family: var(--font-display);
-  font-size: 40px; font-weight: 800; color: var(--ink);
-}
-.price-main small { font-size: 16px; font-weight: 500; color: var(--ink-muted); }
-.price-recurring {
-  font-size: 18px; color: var(--accent); font-weight: 700;
-  margin: 4px 0 20px;
-}
-.price-list { list-style: none; text-align: left; margin-bottom: 24px; }
-.price-list li {
-  padding: 8px 0; font-size: 14px; color: var(--ink-secondary);
-  display: flex; align-items: flex-start; gap: 10px;
-  border-bottom: 1px solid var(--surface-cool);
-}
-.price-list li:last-child { border: none; }
-.price-list li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
-.price-list .highlight { font-weight: 600; color: var(--ink); }
-.price-note { margin-top: 14px; font-size: 13px; color: var(--ink-muted); }
-@media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
-
-/* FAQ */
-.faq { background: var(--surface-cool); }
-.faq-list { max-width: 600px; margin: 36px auto 0; }
-.faq-item {
-  background: white; border-radius: var(--radius);
-  margin-bottom: 8px; border: 1px solid #D8DFE9;
-  overflow: hidden;
-}
-.faq-item summary {
-  padding: 16px 22px; font-size: 15px; font-weight: 600;
-  color: var(--ink); cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  transition: background 0.2s;
-}
-.faq-item summary:hover { background: var(--surface-cool); }
-.faq-item summary::after {
-  content: '+'; font-size: 20px; color: var(--accent);
-  font-weight: 400; transition: transform 0.3s;
-}
-.faq-item[open] summary::after { transform: rotate(45deg); }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-answer {
-  padding: 0 22px 16px; font-size: 14px;
-  color: var(--ink-muted); line-height: 1.7;
-}
-
-/* CONTACT */
-.contact { background: var(--surface-deep); }
-.contact-form { display: flex; flex-direction: column; gap: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-group label { font-size: 13px; font-weight: 600; color: var(--ink-secondary); }
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 13px 16px; border: 1px solid #C9D1DC;
-  border-radius: 8px; font-size: 15px;
-  font-family: var(--font-body); color: var(--ink);
-  background: white; transition: all 0.2s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
-}
-.form-group textarea { resize: vertical; }
-
-/* FOOTER */
-.footer {
-  background: var(--surface-dark); padding: 60px 24px;
-  text-align: center;
-}
-.footer-cta-title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3.5vw, 32px);
-  font-weight: 700; color: white;
-  margin-bottom: 24px;
-}
-.footer-links {
-  margin-top: 32px; font-size: 14px;
-  color: rgba(255,255,255,0.45);
-}
-.footer-links a {
-  color: rgba(255,255,255,0.65); text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: white; }
-.footer-copy {
-  margin-top: 20px; font-size: 12px;
-  color: rgba(255,255,255,0.2);
-}
-
-/* ANIMATIONS */
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.08s; }
-.d2 { transition-delay: 0.16s; }
-.d3 { transition-delay: 0.24s; }
-.d4 { transition-delay: 0.32s; }
-.d5 { transition-delay: 0.40s; }
-.d6 { transition-delay: 0.48s; }
-.d7 { transition-delay: 0.56s; }
-.d8 { transition-delay: 0.64s; }
-
-.hero-content > * {
-  opacity: 0; transform: translateY(20px);
-  animation: heroIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-.hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-.hero-content > *:nth-child(2) { animation-delay: 0.22s; }
-.hero-content > *:nth-child(3) { animation-delay: 0.34s; }
-.hero-content > *:nth-child(4) { animation-delay: 0.46s; }
-.hero-content > *:nth-child(5) { animation-delay: 0.58s; }
-@keyframes heroIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Counter animation */
-.count-up { display: inline-block; }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav id="nav">
-  <a href="#" class="nav-logo">MotionMade</a>
+  <a href="/" class="nav-logo">MotionMade</a>
   <div class="nav-links">
-    <a href="#industries">Industries</a>
-    <a href="#how">How it works</a>
-    <a href="#demo">Live demo</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact" class="nav-cta">Get started</a>
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/results">Results</a>
+    <a href="/contact" class="nav-cta">Free Audit →</a>
   </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/services">Services</a>
+  <a href="/about">About</a>
+  <a href="/results">Results</a>
+  <a href="/contact">Contact</a>
+  <a href="/contact" class="btn btn-primary" style="margin-top:8px;justify-content:center;">Free Audit →</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Your 24/7 front desk.<br><span>Never miss a customer again.</span></h1>
-    <p class="hero-sub">When a patient visits your website at 9pm, your front desk gives them answers instantly. They book with you instead of calling someone else.</p>
-    <p class="hero-industries">Built for <span class="rotate-word" id="rotatingWord">dentists</span>. And every local service business.</p>
+    <h1>More Leads From Google.<br><span>Results You Can Measure.</span></h1>
+    <p class="hero-sub">We manage your Google Ads so you get more phone calls, more enquiries, and more clients — without wasting your budget.</p>
+    <p class="hero-industries">Google Ads management for <span class="rotate-word" id="rotatingWord">accountants</span> in Brisbane.</p>
     <div class="hero-buttons">
-      <a href="#contact" class="btn btn-primary">Get started free</a>
-      <a href="#demo" class="btn btn-outline">See it in action ↓</a>
+      <a href="/contact" class="btn btn-primary">Get a Free Audit</a>
+      <a href="#how" class="btn btn-outline">See How It Works ↓</a>
     </div>
-    <p class="hero-note">Built in Brisbane. Trusted by local businesses across Australia.</p>
   </div>
 </section>
 
+<!-- SOCIAL PROOF BAR -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-items">
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Google Ads Certified
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Brisbane-Based
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Local Service Business Specialists
+      </div>
+      <div class="proof-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        No Lock-In Contracts
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
 <section class="problem" id="problem">
   <div class="container section-center">
-    <span class="section-tag reveal">The problem</span>
-    <h2 class="section-title reveal">Sound familiar?</h2>
+    <span class="section-tag reveal">Sound familiar?</span>
+    <h2 class="section-title reveal">You know Google Ads should work.<br>But right now, they don't.</h2>
     <div class="problem-grid">
-      <div class="problem-card reveal d1"><strong>Customers lost after hours</strong>A patient googles your practice at 9pm. Do you bulk bill? How much is a checkup? No answer. They book the dentist down the road.</div>
-      <div class="problem-card reveal d2"><strong>Same questions, every day</strong>Your receptionist answers the same 5 questions all day. How much? What's included? Do you take my health fund? It never stops.</div>
-      <div class="problem-card reveal d3"><strong>Missed calls on the job</strong>You're with a patient or on a job site. Phone ringing. By the time you call back, they've already found someone.</div>
-      <div class="problem-card reveal d4"><strong>No idea what customers want</strong>Visitors come and go from your website. You have no idea what they were looking for or why they left.</div>
-    </div>
-  </div>
-</section>
-
-<section class="solution" id="solution">
-  <div class="container section-center">
-    <span class="section-tag reveal">The fix</span>
-    <h2 class="section-title reveal">Your front desk handles it.</h2>
-    <div class="solution-cards">
-      <div class="sol-card reveal d1">
-        <div class="sol-icon">⚡</div>
-        <h3>Instant answers</h3>
-        <p>Customers get pricing, services, and availability the moment they ask. No waiting, no phone tag, no lost leads.</p>
+      <div class="problem-card reveal d1">
+        <strong>You've tried Google Ads before and wasted money</strong>
+        You spent hundreds (or thousands) and got nothing to show for it. No calls, no enquiries, just a confusing dashboard.
       </div>
-      <div class="sol-card reveal d2">
-        <div class="sol-icon">🌙</div>
-        <h3>After-hours capture</h3>
-        <p>Works at 2am on a Sunday. The customers other businesses miss, you get.</p>
+      <div class="problem-card reveal d2">
+        <strong>You're paying an agency that sends reports you don't understand</strong>
+        Lots of impressions, clicks, and jargon. But where are the actual leads? You shouldn't need a marketing degree to know if your ads are working.
       </div>
-      <div class="sol-card reveal d3">
-        <div class="sol-icon">📊</div>
-        <h3>See what they ask</h3>
-        <p>Dashboard shows every question, when it was asked, and what they wanted to know. Real customer intel.</p>
+      <div class="problem-card reveal d3">
+        <strong>You know you need to be on Google but don't know where to start</strong>
+        Your competitors are showing up. You're not. Every day you wait is another customer going to someone else.
       </div>
-    </div>
-    <div class="solution-callout reveal">Not a chatbot. Not a generic AI. A front desk that knows your business, your prices, and your rules.</div>
-  </div>
-</section>
-
-<section class="industries" id="industries">
-  <div class="container section-center">
-    <span class="section-tag reveal">Who it's for</span>
-    <h2 class="section-title reveal">Built for local service businesses.</h2>
-    <p class="section-desc reveal">Whether you're a dental practice, physio clinic, or cleaning company, your customers are asking the same types of questions. We handle them 24/7.</p>
-    <div class="industry-grid">
-      <div class="industry-card reveal d1">
-        <span class="industry-icon">🦷</span>
-        <h3>Dental</h3>
-        <ul class="industry-questions">
-          <li>How much is a checkup?</li>
-          <li>Do you bulk bill?</li>
-          <li>Do you accept my health fund?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d2">
-        <span class="industry-icon">💪</span>
-        <h3>Physio</h3>
-        <ul class="industry-questions">
-          <li>Do I need a referral?</li>
-          <li>How much per session?</li>
-          <li>Do you treat back pain?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d3">
-        <span class="industry-icon">📋</span>
-        <h3>Accounting</h3>
-        <ul class="industry-questions">
-          <li>How much is a tax return?</li>
-          <li>Do you help with BAS?</li>
-          <li>Can I claim that?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d4">
-        <span class="industry-icon">🐾</span>
-        <h3>Veterinary</h3>
-        <ul class="industry-questions">
-          <li>How much is a consultation?</li>
-          <li>Do you do after-hours?</li>
-          <li>What vaccinations does my dog need?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d5">
-        <span class="industry-icon">🧹</span>
-        <h3>Cleaning</h3>
-        <ul class="industry-questions">
-          <li>How much is a bond clean?</li>
-          <li>What's included?</li>
-          <li>Do you guarantee the bond?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d6">
-        <span class="industry-icon">🔧</span>
-        <h3>Plumbing</h3>
-        <ul class="industry-questions">
-          <li>What's your call-out fee?</li>
-          <li>Do you do emergencies?</li>
-          <li>Can you fix a leaking tap?</li>
-        </ul>
-      </div>
-      <div class="industry-card reveal d7">
-        <span class="industry-icon">⚡</span>
-        <h3>Electrical</h3>
-        <ul class="industry-questions">
-          <li>Do you install ceiling fans?</li>
-          <li>What's the hourly rate?</li>
-          <li>Do you do switchboard upgrades?</li>
-        </ul>
-      </div>
-      <div class="industry-card more-card reveal d8">
-        <span class="industry-icon">💡</span>
-        <h3>Your industry</h3>
-        <p>If your customers keep asking the same questions, this is for you.</p>
+      <div class="problem-card reveal d4">
+        <strong>You're getting clicks but no one's calling</strong>
+        Traffic means nothing if it doesn't turn into phone calls and enquiries. Something's broken between the ad and the conversion.
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div class="container section-center">
     <span class="section-tag reveal">How it works</span>
-    <h2 class="section-title reveal">Live in under 24 hours.</h2>
+    <h2 class="section-title reveal">Three steps to more leads.</h2>
+    <p class="section-desc reveal">No jargon. No 6-month commitments. Just a clear process that gets you results.</p>
     <div class="steps">
       <div class="step reveal d1">
         <div class="step-num">1</div>
-        <h3>10-minute briefing</h3>
-        <p>Tell us your services, pricing, and the questions customers always ask. That's all we need.</p>
+        <h3>We audit your current situation</h3>
+        <p>Free, no obligation. We look at your current ads (or lack of), your website, your competitors, and your market. You get an honest assessment of what's working and what's not.</p>
       </div>
       <div class="step reveal d2">
         <div class="step-num">2</div>
-        <h3>We set up your front desk</h3>
-        <p>We build it, install it on your website, and test it. You don't touch any code.</p>
+        <h3>We build and launch your campaigns</h3>
+        <p>Keyword research, ad copywriting, conversion tracking, landing page recommendations — we handle everything. You approve it, we launch it.</p>
       </div>
       <div class="step reveal d3">
         <div class="step-num">3</div>
-        <h3>Customers get handled</h3>
-        <p>Someone visits your site and asks about pricing. Your front desk gives them the answer and they enquire instead of leaving.</p>
+        <h3>You get more leads</h3>
+        <p>Monthly reporting you can actually understand. Ongoing optimisation. Transparent results. You see every dollar spent and every lead generated.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:32px;" class="reveal">
-      <a href="#contact" class="btn btn-primary">Get started →</a>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="/contact" class="btn btn-primary">Get Your Free Audit →</a>
     </div>
   </div>
 </section>
 
-<section class="demo" id="demo">
+<!-- RESULTS / SOCIAL PROOF -->
+<section class="results" id="results">
   <div class="container section-center">
-    <span class="section-tag reveal">Live demo</span>
-    <h2 class="section-title reveal">See your front desk in action.</h2>
-    <p class="section-desc reveal">This is a real setup for a Brisbane cleaning business. Ask it anything a customer would.</p>
-    <div class="demo-frame reveal">
-      <div id="motionmade-widget"></div>
+    <span class="section-tag reveal">Results</span>
+    <h2 class="section-title reveal">Real numbers. Real businesses.</h2>
+    <p class="section-desc reveal">We'll let the results speak for themselves. Here's what we've delivered for local businesses like yours.</p>
+    <div class="results-grid">
+      <div class="result-card reveal d1">
+        <div class="result-quote">"We went from zero online enquiries to 14 new client leads in the first month. The ROI paid for the ads and management fee three times over."</div>
+        <div class="result-meta">
+          <div class="result-stat">14 enquiries in 30 days</div>
+          <div class="result-source">Accounting Firm, Brisbane</div>
+        </div>
+      </div>
     </div>
+    <p class="results-note reveal">More case studies coming as we grow. <a href="/results">See all results →</a></p>
   </div>
 </section>
 
-<section class="pricing" id="pricing">
+<!-- SERVICES OVERVIEW -->
+<section class="services-overview" id="services">
   <div class="container section-center">
-    <span class="section-tag reveal">Pricing</span>
-    <h2 class="section-title reveal">Less than the cost of one missed customer.</h2>
-    <div class="pricing-grid">
-      <div class="price-card reveal d1">
-        <div class="price-label">Tradies</div>
-        <div class="price-main">$49 <small>/month</small></div>
-        <div class="price-recurring" style="color:var(--ink-muted);font-size:15px;">+ $299 setup</div>
-        <ul class="price-list">
-          <li>Custom front desk for your business</li>
-          <li>Installed on your website for you</li>
-          <li>Handles enquiries 24/7</li>
-          <li>Customer question dashboard</li>
-          <li class="highlight">We build and manage everything</li>
-          <li>Cancel anytime. No lock-in.</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get started →</a>
+    <span class="section-tag reveal">What we do</span>
+    <h2 class="section-title reveal">Google Ads. That's it. And we're very good at it.</h2>
+    <div class="services-grid">
+      <div class="service-item reveal d1">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Google Ads Management</h3>
+        <p>Full campaign setup, optimisation, and ongoing management. We handle everything from keyword research to bid strategy.</p>
       </div>
-      <div class="price-card featured reveal d2">
-        <div class="price-label">Professional Services</div>
-        <div class="price-main">$149 <small>/month</small></div>
-        <div class="price-recurring" style="color:var(--ink-muted);font-size:15px;">+ $299 setup</div>
-        <ul class="price-list">
-          <li>Everything in Tradies plan</li>
-          <li>Priority setup (live within 24 hours)</li>
-          <li>Advanced question analytics</li>
-          <li>Peak hours and topic insights</li>
-          <li class="highlight">Built for dental, physio, accounting, vet</li>
-          <li>Cancel anytime. No lock-in.</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get started →</a>
-        <p class="price-note">One missed patient costs more than a year of this.</p>
+      <div class="service-item reveal d2">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Google Ads Audit</h3>
+        <p>Already running ads? We'll review your account for free and show you exactly where you're wasting money and what to fix.</p>
       </div>
+      <div class="service-item reveal d3">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <h3>Landing Page Recommendations</h3>
+        <p>Your ads are only as good as the page they land on. We'll tell you what to fix so more visitors turn into leads.</p>
+      </div>
+      <div class="service-item reveal d4">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Conversion Tracking Setup</h3>
+        <p>If you can't measure it, you can't improve it. We set up proper tracking so you know exactly which ads are generating leads.</p>
+      </div>
+      <div class="service-item reveal d5">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Monthly Reporting & Strategy</h3>
+        <p>Clear, jargon-free reports that show leads generated, cost per lead, and what we're doing next. No vanity metrics.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="/services" class="btn btn-outline-dark">View Full Services & Pricing →</a>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container section-center">
     <span class="section-tag reveal">Questions</span>
-    <h2 class="section-title reveal">Common questions</h2>
+    <h2 class="section-title reveal">Straight answers.</h2>
     <div class="faq-list">
-      <details class="faq-item reveal"><summary>Is this a chatbot?</summary><div class="faq-answer">No. Chatbots give generic responses and frustrate customers. This is a front desk trained on your actual business — your prices, your services, your rules. It gives one clear answer, not a conversation tree.</div></details>
-      <details class="faq-item reveal"><summary>What kind of businesses is this for?</summary><div class="faq-answer">Any local service business. Dentists, physios, accountants, vets, cleaners, plumbers, electricians. If customers keep asking you the same questions, this is for you.</div></details>
-      <details class="faq-item reveal"><summary>How is this different from Tidio or other chatbots?</summary><div class="faq-answer">Tidio is a tool — you have to set up flows, write answers, and manage bot logic yourself. We're a service. You spend 10 minutes on a call with us and it's live by tomorrow. Different product entirely.</div></details>
-      <details class="faq-item reveal"><summary>Do I need to be tech-savvy?</summary><div class="faq-answer">No. We set everything up for you. You don't write any code or install anything yourself.</div></details>
-      <details class="faq-item reveal"><summary>What if a customer asks something not covered?</summary><div class="faq-answer">It tells them to call you directly, with your phone number. It never makes up answers or hallucinate information.</div></details>
-      <details class="faq-item reveal"><summary>Can I change the answers later?</summary><div class="faq-answer">Yes. You have a dashboard where you can see every question, manage your FAQs, and add new answers. Changes go live instantly.</div></details>
-      <details class="faq-item reveal"><summary>What websites does it work with?</summary><div class="faq-answer">All of them. WordPress, Squarespace, Wix, Shopify, custom sites. We handle the install.</div></details>
-      <details class="faq-item reveal"><summary>Is there a lock-in contract?</summary><div class="faq-answer">No. Month-to-month. Cancel anytime.</div></details>
+      <details class="faq-item reveal">
+        <summary>How much should I spend on Google Ads?</summary>
+        <div class="faq-answer">It depends on your industry and competition, but most local businesses start with $1,000–$3,000/month in ad spend. We'll recommend a budget based on your goals and market during the free audit.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>How long until I see results?</summary>
+        <div class="faq-answer">Most campaigns start generating leads within the first 2 weeks. Optimisation improves results over months — the longer we run, the better your cost per lead gets.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What if I've tried Google Ads before and it didn't work?</summary>
+        <div class="faq-answer">Most failed campaigns have fixable problems — wrong keywords, poor ad copy, no conversion tracking, or sending traffic to a page that doesn't convert. We audit first and show you exactly what went wrong before you spend another dollar.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Do I need a new website?</summary>
+        <div class="faq-answer">Not necessarily. We'll tell you honestly if your current site can convert traffic. Sometimes small changes make a big difference. If your site does need work, we'll give you specific recommendations.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What do you charge?</summary>
+        <div class="faq-answer">Management fees start from $800/month. Ad spend is separate and paid directly to Google — you control the budget. <a href="/services">See full pricing on our Services page.</a></div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Can I see what you're doing?</summary>
+        <div class="faq-answer">Yes. Full transparency. You own the Google Ads account, you see every dollar spent, and you get monthly reports that actually make sense. No black boxes.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<!-- FINAL CTA -->
+<section class="final-cta">
   <div class="container section-center">
-    <span class="section-tag reveal">Get in touch</span>
-    <h2 class="section-title reveal">Ready to stop losing customers after hours?</h2>
-    <p class="section-desc reveal" style="margin-bottom:28px;">Fill this in and Abbed will get back to you within 24 hours.</p>
-    <form id="contactForm" class="contact-form reveal" style="max-width:440px;margin:0 auto;text-align:left;">
-      <div class="form-group">
-        <label for="cName">Your name</label>
-        <input type="text" id="cName" required placeholder="e.g. Sarah">
-      </div>
-      <div class="form-group">
-        <label for="cBiz">Business name</label>
-        <input type="text" id="cBiz" required placeholder="e.g. Smile Dental Brisbane">
-      </div>
-      <div class="form-group">
-        <label for="cEmail">Email</label>
-        <input type="email" id="cEmail" required placeholder="e.g. sarah@smiledental.com.au">
-      </div>
-      <div class="form-group">
-        <label for="cPhone">Phone</label>
-        <input type="tel" id="cPhone" placeholder="e.g. 0412 345 678">
-      </div>
-      <div class="form-group">
-        <label for="cType">What kind of business?</label>
-        <select id="cType">
-          <option value="">Select...</option>
-          <option value="dentist">Dental</option>
-          <option value="physio">Physiotherapy</option>
-          <option value="accountant">Accounting</option>
-          <option value="vet">Veterinary</option>
-          <option value="cleaner">Cleaning</option>
-          <option value="plumber">Plumbing</option>
-          <option value="electrician">Electrical</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="cMsg">How can we help?</label>
-        <textarea id="cMsg" rows="3" placeholder="e.g. I'd like a demo, I have a question about pricing, I want to get set up..."></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send enquiry</button>
-      <p style="margin-top:10px;font-size:12px;color:var(--ink-muted);text-align:center;">Abbed will reply within 24 hours. No spam, ever.</p>
-    </form>
-    <div id="contactOk" style="display:none;text-align:center;padding:48px 0;">
-      <div style="width:56px;height:56px;margin:0 auto 16px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:24px;font-weight:700;">✓</div>
-      <h3 style="font-family:var(--font-display);font-size:22px;margin-bottom:8px;">Got it!</h3>
-      <p style="color:var(--ink-muted);font-size:15px;">We'll be in touch within 24 hours to get you set up.</p>
+    <h2 class="final-cta-title reveal">Ready to get more leads from Google?</h2>
+    <p class="final-cta-sub reveal">Book a free strategy call. We'll audit your current situation and show you exactly what's possible.</p>
+    <div class="reveal">
+      <a href="/contact" class="btn btn-primary btn-lg">Book a Free Strategy Call →</a>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <h2 class="footer-cta-title reveal">Ready to stop losing customers after hours?</h2>
-  <a href="#contact" class="btn btn-primary reveal">Get started free</a>
-  <div class="footer-links reveal">
-    <a href="mailto:abbed@motionmadebne.com.au">abbed@motionmadebne.com.au</a>
-    &nbsp;·&nbsp;
-    <a href="tel:+61437037584">0437 037 584</a>
-    &nbsp;·&nbsp;
-    <a href="/bond-cleaning-quote-calculator">Free Tools</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo">MotionMade</a>
+      <p>Google Ads management for local service businesses in Brisbane.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Pages</h4>
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/results">Results</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Services</h4>
+      <a href="/services#management">Google Ads Management</a>
+      <a href="/services#audit">Google Ads Audit</a>
+      <a href="/services#tracking">Conversion Tracking</a>
+      <a href="/services#reporting">Monthly Reporting</a>
+    </div>
+    <div class="footer-nav">
+      <h4>Contact</h4>
+      <a href="mailto:abbed@motionmadebne.com.au">abbed@motionmadebne.com.au</a>
+      <a href="tel:+61437037584">0437 037 584</a>
+    </div>
   </div>
-  <p class="footer-copy">© 2026 MotionMade. Brisbane, Australia.</p>
+  <div class="footer-bottom">
+    <p>© 2026 MotionMade. Brisbane, Australia.</p>
+  </div>
 </footer>
 
-<script src="https://motionmade-fastapi.onrender.com/widget.js?v=6"
-  data-tenant="demo_cleaner"
-  data-name="Brisbane Bond Cleaning"
-  data-phone="0437 037 584"
-  data-color="#2563EB"
-  data-mode="inline"
-  data-api="https://motionmade-fastapi.onrender.com"></script>
-
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* Rotating words in hero */
-const words = ['dentists', 'physios', 'accountants', 'vets', 'cleaners', 'plumbers'];
+const words = ['accountants', 'tradies', 'dentists', 'physios', 'lawyers', 'plumbers', 'electricians'];
 let wordIdx = 0;
 const wordEl = document.getElementById('rotatingWord');
 if (wordEl) {
+  wordEl.style.transition = 'opacity 0.25s, transform 0.25s';
   setInterval(() => {
     wordIdx = (wordIdx + 1) % words.length;
     wordEl.style.opacity = '0';
@@ -773,34 +326,21 @@ if (wordEl) {
       wordEl.style.transform = 'translateY(0)';
     }, 250);
   }, 2500);
-  wordEl.style.transition = 'opacity 0.25s, transform 0.25s';
 }
 
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
+document.getElementById('navToggle').addEventListener('click', function() {
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.toggle('open');
+  this.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
 
-  const d = {
-    name: document.getElementById('cName').value,
-    business: document.getElementById('cBiz').value,
-    email: document.getElementById('cEmail').value,
-    phone: document.getElementById('cPhone').value,
-    type: document.getElementById('cType').value,
-    message: document.getElementById('cMsg').value
-  };
-
-  try {
-    await fetch('https://motionmade-fastapi.onrender.com/api/enquiry', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(d)
-    });
-  } catch (err) {}
-
-  this.style.display = 'none';
-  document.getElementById('contactOk').style.display = 'block';
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('navToggle').classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 </script>
 
