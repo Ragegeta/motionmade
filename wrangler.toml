@@ -1,0 +1,5 @@
+# Cloudflare Pages — build output for Git and Wrangler CLI
+# Dashboard should match: Build command `npm run build`, Output `dist`
+name = "motionmade"
+compatibility_date = "2024-04-01"
+pages_build_output_dir = "dist"
