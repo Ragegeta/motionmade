@@ -1,6 +1,6 @@
 {
   "name": "motionmade-landing",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html services.html about.html results.html contact.html styles.css dist/ && cp bond-cleaning-quote-calculator.html bondQuoteEngine.js google3e4e297ea1482367.html dist/ && cp public/_redirects dist/"
+    "build": "mkdir -p dist && cp index.html services.html about.html results.html contact.html styles.css dist/ && cp bond-cleaning-quote-calculator.html bondQuoteEngine.js google3e4e297ea1482367.html dist/ && cp public/_redirects dist/ && rm -rf dist/images && cp -R images dist/"
   }
 }
